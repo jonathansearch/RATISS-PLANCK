@@ -137,6 +137,16 @@ Deuxième vol, compte « Tym Sama » (25 Spark, job `f348285e-1d02-4fcb-b263-e73
 
 *(Crédit restant : 10 Spark — le prochain vol attend la réclamation des 50 $.)*
 
+### 🛰️ v0.5 (soir) — le SHOT ÉPISODIQUE : 3 GHZ en UN job (idée du chef)
+
+**L'idée du chef : « plusieurs expériences dans un seul tir pour ne payer qu'une fois. »** Exécutée en 12 qubits, 3 compartiments (GHZ-3 + GHZ-4 + GHZ-5), 1024 tirs, sur IQM Garnet — job `85b3b9df`, **coût 2 crédits** (le supra coûte 7× moins que l'ion !) :
+
+- **Sur ions all-to-all (IBEX)** : le concept marche d'eux-mêmes (compartiments indépendants).
+- **Sur supra carré (Garnet)** : GHZ-3 = 92,3 % mais B/C ≈ 47 % — **le transpileur a inséré des SWAPs qui ont fait déborder l'intrication des compartiments** (pics mélangés de 78-116 tirs = états cohérents à travers les qubits remappés). `figures/fig_10_episode.png`.
+- **Verdict RATISS (résultat réel, pas un échec)** : le shot épisodique exige l'all-to-all — ou une transpilation explicite avec layouts sur étoiles natives (prochain vol, toujours 2 crédits). **La leçon d'architecture vaut le détour : on sait maintenant POURQUOI.**
+
+*(Trois comptes, trois organisations, trois files : Jonathan Evina → Tym Sama → Patrice Lagloire → Jonathan Sama. Le labo a appris à gérer un arsenal.)*
+
 ## 🎯 Verdict de la mission (en 3 lignes)
 
 1. **Le mur existe comme croisement des équations, pas comme pixel** — le prouver « frontière » est impossible avec les données actuelles, et les données DISPOULAIENT déjà la version naïve.

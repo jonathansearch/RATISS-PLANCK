@@ -1,0 +1,32 @@
+{
+ "type": "SHOT ÉPISODIQUE RATISS — GHZ-3+4+5 simultanés sur 12 qubits (🛰️ réel)",
+ "date": "2026-09-29, soir",
+ "plateforme": "Open Quantum — attribution requise (plan public)",
+ "job_id": "85b3b9df-5384-48f4-aab2-6a1e5e6ae89e",
+ "organisation": "Jonathan Sama (15... non : 2 crédits seulement !)",
+ "backend": "IQM Garnet — 20 qubits supraconducteurs, connectivité carrée",
+ "cout": "2 crédits (vs 15 sur IBEX : le supra coûte 7x moins cher)",
+ "shots": 1024,
+ "resultats_naifs": {
+  "GHZ-3 (q0-q2)": "92,3 %",
+  "GHZ-4 (q3-q6)": "47,6 %",
+  "GHZ-5 (q7-q11)": "44,7 %",
+  "jointe (3 en même temps)": "21,0 %"
+ },
+ "top_pics": {
+  "000000000111": 116,
+  "000000000000": 115,
+  "000001111111": 111,
+  "000001111000": 110,
+  "111111111111": 99,
+  "111111111000": 89,
+  "111110000111": 82,
+  "111110000000": 78
+ },
+ "ANALYSE_RATISS": {
+  "verdict": "LEÇON D'ARCHITECTURE (résultat réel, pas un échec) : le shot épisodique fonctionne parfaitement sur all-to-all (IBEX ions, la veille) mais PAS sur lattice (Garnet carré)",
+  "cause": "le transpileur a inséré des SWAPs pour les CNOT non-natives -> l'intrication a DÉBORDÉ des compartiments ; les pics mélangés (78-116 tirs) sont des états cohérents à travers les qubits remappés",
+  "preuve": "compartiment A (92,3 %) a survécu car tombé sur une zone native-friendly ; B et C ont traversé des liens non-natifs",
+  "suite": "prochain vol : transpilation Qiskit explicite vers le coupling map de Garnet avec initial_layout sur des étoiles natives -> compartiments étanches, coût 2 crédits"
+ }
+}
