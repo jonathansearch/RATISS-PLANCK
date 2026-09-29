@@ -6,7 +6,7 @@
 > ou s'il y a des fluctuations encore plus petites »
 
 **Type de campagne : 🧮 in silico + bases réelles. Zéro matériel, zéro promesse.**
-**14/14 tests verts · 4 figures · graine 20260929 · étiquettes calcul/synthèse jamais mélangées.**
+**26/26 tests verts · 5 figures · graine 20260929 · étiquettes calcul/synthèse jamais mélangées.**
 
 ---
 
@@ -66,6 +66,19 @@ Recalcul complet (`mousse.py`) : distance comobile de GRB 090510 intégrée num�
 
 Et les effets **quadratiques** (doux) ne sont exclus qu'à E_QG,2 > 10¹² GeV = 10⁻⁷ E_P : **la fenêtre quadratique reste grand ouverte** (fig_3 droite). Côté labo : le Holometer de Fermilab (2015) n'a vu **aucun** bruit holographique corrélé — le premier modèle testable d'« univers pixelisé » est exclu à haute signification. LIGO, lui, exclut déjà un bruit de métrique d'amplitude Planck **sans** le caractère transverse holographique spécifique.
 
+## 🔵 Question 4 (mission v0.1 du soir) — le qubit informationnel au mur
+
+**La mission du chef : « puisque la matière, en le mesurant, ne passe pas le mur, envoie un qubit informationnel porteur et regarde ce qui va lui arriver. »** (`qubit.py`, `figures/fig_5_qubit.png`)
+
+Prémisse calculée (Landauer) : **un qubit sans porteur n'existe pas** — l'information est physique (1 bit à 300 K = 2,87×10⁻²¹ J), elle hérite donc du mur :
+
+- **Le couloir GUP** : la relation d'incertitude gravitationnelle Δx ≥ ħ/(2Δp) + ℓ_P²Δp/ħ a un plancher **exactement à √2·ℓ_P** — retrouvé par descente numérique à 10⁻⁶ (12e test vert). **Même une fonction d'onde ne passe pas le mur : sa propre largeur minimale EST le mur.**
+- **La capacité holographique** : une cellule de taille ℓ_P stocke π/ln2 = **4,53 bits** ; au plancher (√2 ℓ_P de rayon), il reste **9,1 bits de marge pour loger 1 qubit** — ça passe au mur, sans plus.
+- **L'écume naïve ne le décohère pas** (résultat NÉGATIF, cohérent avec le nul du Holometer) : il faudrait **10²³ ans** au bruit de marche aléatoire de Planck pour voler 1 rad de phase à un qubit micro-onde 5 GHz — 12 900× l'âge de l'univers. (Et si l'écume cumule ~46 µm sur l'âge de l'univers, la longueur d'onde de 6 cm du qubit s'en moque.)
+- **Le sort du porteur poussé sous le mur** : micro-trou noir de masse m_P, évaporation de Hawking en **16 085 t_P = 8,7×10⁻⁴⁰ s** à T_H = 5,6×10³⁰ K. Et là : **le qubit ressort-il intact de l'évaporation ? PARADOXE DE L'INFORMATION — NON RÉSOLU** (Page 1993 → île/formule de Page 2019). Le calcul s'arrête exactement où la physique s'arrête, étiquette « synthèse littéraire » sur la suite.
+
+**Verdict du voyage (3 zones, fig_5 droite) :** LIBRE au-dessus de 100 ℓ_P (l'écume est inoffensive) · AU MUR entre √2 et 100 ℓ_P (9,1 bits de marge au plancher) · TROU NOIR en dessous (porteur effondré, sort du qubit = question ouverte n°1 du domaine). **Le porteur d'information va aussi loin que la matière — pas plus loin — mais il va plus loin que la QUESTION : le paradoxe qu'il ouvre est le vrai chantier.**
+
 ## 🎯 Verdict de la mission (en 3 lignes)
 
 1. **Le mur existe comme croisement des équations, pas comme pixel** — le prouver « frontière » est impossible avec les données actuelles, et les données DISPOULAIENT déjà la version naïve.
@@ -79,6 +92,7 @@ python3 planck/constantes.py    # les unités du mur vs CODATA
 python3 planck/mur.py           # croisement, seuil √2 ℓ_P, collideur
 python3 planck/mousse.py        # GRB 090510, retards, pixel maximal
 python3 planck/depassement.py   # la barrière de trou noir
+python3 planck/qubit.py         # le qubit informationnel au mur
 python3 planck/figures.py       # les 4 figures
 python3 tests/test_planck.py    # 14/14
 ```
@@ -87,9 +101,9 @@ python3 tests/test_planck.py    # 14/14
 
 ```
 RATISS-PLANCK/
-├── planck/       constantes · mur · mousse · depassement · figures
-├── figures/      fig_1_mur · fig_2_collideur · fig_3_mousse · fig_4_depassement
-├── tests/        test_planck.py (14)
+├── planck/       constantes · mur · mousse · depassement · qubit · figures
+├── figures/      fig_1_mur · fig_2_collideur · fig_3_mousse · fig_4_depassement · fig_5_qubit
+├── tests/        test_planck.py (14) · test_qubit.py (12)
 ├── DONNEES/      bases_externes.json (CODATA, Fermi, LHAASO, Holometer — sources datées)
 ├── outils/       manifeste.py (sceau SHA-256)
 └── MANIFESTE.json
