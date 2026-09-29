@@ -1,0 +1,14 @@
+{
+  "type": "METIQUE REELLE — premier vol QPU du labo RATISS (🛰️)",
+  "date": "2026-09-29",
+  "plateforme": "Open Quantum (www.openquantum.com) — attribution requise (plan public)",
+  "job_id": "a1f0fbef-90cb-4d56-9110-b0f9d0b76b5d",
+  "backend": "AQT IBEX Q1 — 12 qubits ions piégés, connectivité all-to-all",
+  "circuit": "Bell : h q[0]; cx q[0],q[1]",
+  "shots": 1024,
+  "comptages": {"00": 515, "11": 505, "10": 2, "01": 2},
+  "fidelite_bell": 0.99609,
+  "commentaire": "1020/1024 sur les états attendus. Cohérent avec la donnée fraîche de la mission (cohérence IBEX le 29/09 : 99,5 % sur 12 qubits) — le même jour, la même machine.",
+  "credits": "job facturé 15 crédits (plan public) ; les 50 $ gratuits restent À RÉCLAMER sur le tableau de bord",
+  "suites_prevues": "GHZ-7 (le lien réel vers la courbe de Page) dès crédits disponibles ; comparaison multi-QPU Garnet/Emerald/Cepheus"
+}

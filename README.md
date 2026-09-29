@@ -6,7 +6,7 @@
 > ou s'il y a des fluctuations encore plus petites »
 
 **Type de campagne : 🧮 in silico + bases réelles. Zéro matériel, zéro promesse.**
-**40/40 tests verts · 7 figures · graine 20260929 · étiquettes calcul/synthèse jamais mélangées.**
+**40/40 tests verts · 8 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
 
 ---
 
@@ -103,6 +103,24 @@ Le qubit porteur est un observateur accéléré : T_U = ħa/(2πck_B).
 - **Le principe d'équivalence, chiffré et TESTÉ** : à la gravité de surface du micro-trou noir (κ = c⁴/4Gm_P), le bain Unruh = la température de Hawking exactement (accord < 10⁻⁶).
 - **Verdict du voyage** : entre le seuil de décohérence du qubit (0,12 K à 3×10¹⁹ m/s²) et l'horizon (1,4×10⁵¹ m/s²), il y a **31 ordres de grandeur** — le porteur voyage DANS LA GLACE jusqu'au bord, puis tout flambe d'un coup. La décohérence Unruh n'est pas un frein du voyage : c'est la DÉFINITION du mur.
 
+## 🛰️ v0.3 — PREMIER VOL RÉEL : Bell sur un vrai QPU (29/09/2026, 13:15 UTC)
+
+**Via Open Quantum** (le hub multi-QPU IonQ/Rigetti/IQM/AQT du chef — compte « Jonathan Evina ») :
+
+| | |
+|---|---|
+| Backend | **AQT IBEX Q1** — 12 qubits ions piégés, all-to-all, en ligne |
+| Job | `a1f0fbef-90cb-4d56-9110-b0f9d0b76b5d` — plan public, 15 crédits |
+| Circuit | Bell : H⊕CX, **1024 tirs** |
+| Comptages | `00`=515 · `11`=505 · `10`=2 · `01`=2 |
+| **Fidélité** | **99,61 %** (1020/1024) — `figures/fig_8_bell_qpu.png` |
+
+Et le plus beau : **le jour même, la donnée fraîche de la mission donnait 99,5 % de cohérence sur IBEX** — le labo RATISS vient de faire tourner exactement le matériel de sa quête, le même jour. 🧮 et 🛰️ se sont rencontrés.
+
+⚠️ *Débit crédits : le solde actuel ne permet plus de soumettre — les 50 $ gratuits sont À RÉCLAMER sur le tableau de bord (Facturation → « 50 $ à réclamer »). Dès réclamation : GHZ-7 (le lien réel vers la courbe de Page, fig_6), puis comparaison Garnet/Emerald/Cepheus-1-108Q. Le canon est armé : `outils/soumettre_qpu.py ghz7`.*
+
+*Attribution (plan public Open Quantum) : résultats obtenus via www.openquantum.com — citation requise pour toute publication.*
+
 ## 🎯 Verdict de la mission (en 3 lignes)
 
 1. **Le mur existe comme croisement des équations, pas comme pixel** — le prouver « frontière » est impossible avec les données actuelles, et les données DISPOULAIENT déjà la version naïve.
@@ -131,7 +149,7 @@ RATISS-PLANCK/
 ├── figures/      fig_1_mur · fig_2_collideur · fig_3_mousse · fig_4_depassement · fig_5_qubit
 ├── tests/        test_planck.py (14) · test_qubit.py (12)
 ├── DONNEES/      bases_externes.json (CODATA, Fermi, LHAASO, Holometer — sources datées)
-├── outils/       manifeste.py (sceau SHA-256)
+├── outils/       manifeste.py (sceau) · soumettre_qpu.py (🛰️ lanceur QPU réel)
 └── MANIFESTE.json
 ```
 
