@@ -1,0 +1,19 @@
+{
+ "type": "TRILOGIE CROSS-BACKEND — Cepheus-1-108Q (🛰️)",
+ "date": "2026-09-29, soirée",
+ "plateforme": "Open Quantum — attribution requise",
+ "jobs": {
+  "GHZ-3": "7eadb11e-5b9c-4dc6-9495-7418bee413a1",
+  "GHZ-4": "cac2fbe7-d64c-4a05-a4b6-f9d2cf0d4396",
+  "GHZ-5": "a4db428f-b059-4567-ba9d-630fbe3e922c"
+ },
+ "backend": "Rigetti Cepheus-1-108Q (108 qubits supra, chiplets modulaires)",
+ "cout": "1 CRÉDIT par job (la machine la moins chère du catalogue !)",
+ "circuits": "GHZ en CHAÎNE (h q0; cx q_i,q_i+1), 1024 tirs",
+ "fidelites": {
+  "GHZ-3": 89.7,
+  "GHZ-4": 79.3,
+  "GHZ-5": 68.7
+ },
+ "comparaison": "même circuit sur Garnet (20q) : 94.5/94.6/88.5 — le 108q décohère PLUS VITE que le 20q (chiplets modulaires + plus de portes effectives ?)"
+}

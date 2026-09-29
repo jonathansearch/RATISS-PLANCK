@@ -1,0 +1,12 @@
+{
+ "type": "GHZ-12 — LE CHAT À 12 QUBITS (🛰️, fleuron du labo)",
+ "date": "2026-09-29, nuit",
+ "job_id": "b373d22f-609e-49ec-9c19-6cab08877065",
+ "backend": "IQM Garnet (20q supra), chaîne de 12, 1024 tirs, 2 crédits",
+ "comptages_ideaux": {
+  "000000000000": 387,
+  "111111111111": 289
+ },
+ "fidelite_ghz12": 66.0,
+ "lecture": "la courbe de décohérence de Garnet se referme : 94.5 (3q) -> 94.6 (4q) -> 88.5 (5q) -> 66.0 (12q). Le plus grand état intriqué jamais produit par le labo."
+}

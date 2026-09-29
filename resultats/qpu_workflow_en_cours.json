@@ -1,0 +1,10 @@
+{
+ "type": "WORKFLOW SAUVÉ — tirs longue file (à récolter)",
+ "GHZ-4 IONS": {
+  "job_id": "df23deac-8158-46e2-acef-62c2d47823a6",
+  "organisation": "Jonathan Sama (15 crédits)",
+  "statut_au_29-09_nuit": "Pending (file IBEX congestionnée, timeout plateforme 24 h)",
+  "recolte": "python3 -c SDK get_job + download_job_output, puis fidélité = (0000+1111)/1024",
+  "valeur": "le point commun GHZ-4 ions <-> Garnet 94,6 % <-> Cepheus 79,3 %"
+ }
+}

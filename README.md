@@ -6,7 +6,7 @@
 > ou s'il y a des fluctuations encore plus petites »
 
 **Type de campagne : 🧮 in silico + bases réelles. Zéro matériel, zéro promesse.**
-**40/40 tests verts · 11 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
+**40/40 tests verts · 12 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
 
 ---
 
@@ -158,6 +158,23 @@ Deuxième vol, compte « Tym Sama » (25 Spark, job `f348285e-1d02-4fcb-b263-e73
 | GHZ-5 | 44,7 / 45,9 % | **88,5 %** |
 
 **Loi RATISS du shot épisodique (donnée réelle, même machine, même heure) :** les compartiments co-hébergés ne survivent à la transpilation **que sur all-to-all** (ions). Sur lattice : chaînes natives en jobs séparés = 88-95 %. L'écart 45 % ↔ 94 % isole proprement l'effet du transpileur — **une petite expérience de systèmes qui vaut un paragraphe de papier.**
+
+### 🛰️ v0.7 (nuit) — LA TRILOGIE CROISÉE + LE CHAT-12
+
+Ordre du chef exécuté (1 tir à la fois, devis vérifiés) — **Cepheus-1-108Q coûte 1 crédit/job** (la moins chère du catalogue !) :
+
+| GHZ (chaînes) | 🔵 IBEX ions | 🟣 Garnet supra 20q | 🟡 Cepheus supra 108q |
+|---|---|---|---|
+| 2 | **99,61 %** | — | — |
+| 3 | *(demain)* | 94,5 % | **89,7 %** |
+| 4 | *(en file, récolte demain)* | 94,6 % | **79,3 %** |
+| 5 | *(demain)* | 88,5 % | **68,7 %** |
+| 7 | **90,04 %** | — | — |
+| **12** | — | **66,0 %** 🐱 | — |
+
+**Le chat-12** (job `b373d22f`, 2 crédits) : 000…0=387, 111…1=289 → **66,0 %** — le plus grand état intriqué du labo, et la courbe de Garnet se referme (94,5 → 94,6 → 88,5 → 66,0). **Première comparaison inter-familles** : le 108q (Cepheus) décohère PLUS VITE que le 20q (Garnet) à taille égale. `figures/fig_12_trilogie.png`.
+
+*(Workflow sauvé pour la récolte : `resultats/qpu_workflow_en_cours.json` — GHZ-4 ions `df23deac` en file IBEX, timeout 24 h.)*
 
 **Et la figure fig_11 droite : le PREMIER scaling croisé RATISS** — ions IBEX (99,6 % @2q → 90,0 % @7q) et supra Garnet (94,5/94,6/88,5 % @3/4/5q), mesurés le même jour. Le labo tient désormais : deux technologies, cinq états de GHZ, une méthode. Patrice `407cd969` dort encore dans la file IBEX — demain, les mêmes compartiments sur ions complètent le tableau.
 
