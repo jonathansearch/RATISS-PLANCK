@@ -1,8 +1,9 @@
 {
- "total_fichiers": 50,
- "octets_total": 15068888,
- "compile_le": "2026-09-29T20:27:25.060658+00:00",
+ "total_fichiers": 51,
+ "octets_total": 15089856,
+ "compile_le": "2026-09-29T20:50:14.099388+00:00",
  "fichiers": {
+  "DEEPDIVE-JOURNEE-20260929.md": "c6237a420f8f9b81816e38c278d50482aa738a65c87baccf196e523abc22eee3",
   "DONNEES/bases_externes.json": "484400d5a5dfdaf21892b4c6d47321997ea7ccf167a64fff42c6cf51a15497c4",
   "LICENSE": "da81290154612ad7f73dd9b417d9c97e811cde1a29d00065a6fa8ff3f353854c",
   "RAPPORT-FINAL.md": "f06d160b24f459def181421bc7175f1b7b5e6acf254c51d01633178330d066dc",
