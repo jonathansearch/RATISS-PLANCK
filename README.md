@@ -2,9 +2,11 @@
 
 **Du mur de Planck aux vrais processeurs quantiques — en une journée, depuis Yaoundé, avec un téléphone.**
 
-![Le laboratoire](assets/illustration_ia_labo.png)
+![Le laboratoire RATISS Labs](assets/illustration_ia_labo.png)
 
-*Illustration générée par IA de la scène réelle : une nuit, un téléphone, un ordinateur, la physique — et le drapeau dans la lumière. RATISS Labs est un projet indépendant mono-auteur (Jonathan Evina, 18 ans, Yaoundé, Cameroun), sans laboratoire institutionnel — et c'est écrit partout, parce que c'est précisément ce qui rend les résultats crédibles.*
+*Le laboratoire RATISS Labs — illustration générée par IA **de la scène réelle** : un bureau à Yaoundé, un ordinateur, un téléphone qui pilote à distance les trois machines quantiques (le piège à ions, le cryostat doré, la puce supra en lattice), les comptages GHZ à deux pics et les coches vertes des tests à l'écran, le drapeau. Pas d' infrastructures imaginaires : c'est ÇA, le labo — un téléphone, des crédits comptés un par un, et la méthode.*
+
+**RATISS Labs est un projet indépendant mono-auteur** (Jonathan Evina, 18 ans, Yaoundé, Cameroun), sans laboratoire institutionnel — et c'est écrit partout, parce que c'est précisément ce qui rend les résultats crédibles.
 
 **Badges du jour :** 40/40 tests verts · 12 figures issues du calcul · 14 jobs QPU réels · ~11 264 tirs · sceau 44/44 · étiquettes 🧮 calcul / 🛰️ terrain / 📚 synthèse jamais mélangées.
 
@@ -19,13 +21,14 @@
 5. [Le terrain 🛰️ — 14 jobs, 3 machines](#-le-terrain--14-jobs-3-machines)
 6. [La trilogie croisée et le chat-12](#-la-trilogie-croisée-et-le-chat-12)
 7. [La loi RATISS du shot épisodique](#-la-loi-ratiss-du-shot-épisodique)
-8. [Les chiffres clés](#-les-chiffres-clés)
-9. [La méthode du labo](#-la-méthode-du-labo)
-10. [Les espoirs](#-les-espoirs)
-11. [Appel à contribution](#-appel-à-contribution)
-12. [La puissance de l'IA bien utilisée](#-la-puissance-de-lia-bien-utilisée)
-13. [Rejouer tout ça](#-rejouer-tout-ça)
-14. [Attribution et licence](#-attribution-et-licence)
+8. [La galerie des figures (100 % calculées)](#-la-galerie-des-figures-100-calculées)
+9. [Les chiffres clés](#-les-chiffres-clés)
+10. [La méthode du labo](#-la-méthode-du-labo)
+11. [Les espoirs](#-les-espoirs)
+12. [Appel à contribution](#-appel-à-contribution)
+13. [La puissance de l'IA bien utilisée](#-la-puissance-de-lia-bien-utilisée)
+14. [Rejouer tout ça](#-rejouer-tout-ça)
+15. [Attribution et licence](#-attribution-et-licence)
 
 ---
 
@@ -62,6 +65,10 @@ CODATA 2022 ──→ croisement (√2·ℓ_P, E_P/√2) ──→ mur de mesure
 ---
 
 ## 🌅 La Base — ce qui se passe ici avec Planck
+
+![Le mur de Planck](assets/illustration_ia_mur_planck.png)
+
+*Illustration générée par IA du concept central du dépôt : la courbe quantique (bleue, qui descend) et la courbe gravitationnelle (rouge, qui monte) se croisent en un seul point — là, la sonde s'effondre en trou noir au-dessus de l'écume de Planck, et un sursaut gamma (nos données Fermi/LHAASO) traverse le fond. C'est fig_1 du dépôt, rendue cosmique.*
 
 ### 1899, et trois constantes qui n'ont rien à voir ensemble
 
@@ -154,6 +161,28 @@ Et ce n'est même pas un problème d'énergie : concentrer E_P dans une particul
 
 ---
 
+## 🖼️ La galerie des figures (100 % calculées)
+
+*Chaque figure de ce dépôt sort d'un script (`planck/figures*.py`), à partir des constantes ou des comptages bruts — jamais d'un dessin décoratif. Étiquettes fidèles : 🧮 = pur calcul, 🛰️ = données QPU réelles.*
+
+<table>
+<tr><th>Figure</th><th>Ce qu'elle montre (chiffres fidèles au calcul)</th></tr>
+<tr><td><img src="figures/fig_1_mur.png" width="460" alt="fig_1"/></td><td><b>🧮 Le mur</b> — λ̄(E) qui descend contre r_s(E) qui monte : croisement unique à E_P/√2 = 1,38×10⁹ J sur √2·ℓ_P. Sous la ligne, sonder = trou noir.</td></tr>
+<tr><td><img src="figures/fig_2_collideur.png" width="460" alt="fig_2"/></td><td><b>🧮 Le collideur impossible</b> — rayon d'anneau pour concentrer E : à E_P il faut 516 années-lumière ; validation sur le vrai LHC : 2 801 m calculés / 2 804 m réels.</td></tr>
+<tr><td><img src="figures/fig_3_mousse.png" width="460" alt="fig_3"/></td><td><b>🧮 L'écume de Planck</b> — marche aléatoire de phase : 10²³ ans pour voler 1 rad (12 900× l'âge de l'univers). Le nul du Holometer 2015 est cohérent.</td></tr>
+<tr><td><img src="figures/fig_4_depassement.png" width="460" alt="fig_4"/></td><td><b>🧮 Le dépassement</b> — ce qui se passe si on force sous √2·ℓ_P : l'horizon de la sonde dépasse sa cible (DFR 1995, recalculé par bissection à 10⁻¹⁴).</td></tr>
+<tr><td><img src="figures/fig_5_qubit.png" width="460" alt="fig_5"/></td><td><b>🧮 Le qubit au mur</b> — couloir GUP : le plancher de la fonction d'onde = √2·ℓ_P exactement ; 4,53 bits par cellule (π/ln2) ; 9,1 bits de marge.</td></tr>
+<tr><td><img src="figures/fig_6_page.png" width="460" alt="fig_6"/></td><td><b>🧮 La courbe de Page (N=12)</b> — simulation vs formule analytique : accord 0,001 bit ; pic EXACT à N/2 = 6 (5,278 bits) puis chute : le rayonnement « sait déjà tout ».</td></tr>
+<tr><td><img src="figures/fig_7_unruh.png" width="460" alt="fig_7"/></td><td><b>🧮 Unruh</b> — T_U(a) : 31 ordres de grandeur de glace (Terre : 4×10⁻²⁰ K), seuil qubit 5 GHz à 0,120 K, puis T_U = T_H au bord du micro-BH (accord 10⁻⁶).</td></tr>
+<tr><td><img src="figures/fig_8_bell_qpu.png" width="460" alt="fig_8"/></td><td><b>🛰️ Bell sur ions (job <code>a1f0fbef</code>)</b> — 1024 tirs : 515 « 00 » + 505 « 11 » + 4 fuites → fidélité 99,61 %. La machine la plus chère (15 Sp) est aussi la plus pure.</td></tr>
+<tr><td><img src="figures/fig_9_ghz7_qpu.png" width="460" alt="fig_9"/></td><td><b>🛰️ GHZ-7 sur ions (<code>f348285e</code>)</b> — 470 + 452 = 922 tirs idéaux sur 1024 → 90,04 % : sept ions chantent la même note.</td></tr>
+<tr><td><img src="figures/fig_10_episode.png" width="460" alt="fig_10"/></td><td><b>🛰️ L'échec fondateur (épisodique)</b> — 3 compartiments co-hébergés sur lattice : 45 % au lieu de 94 %. Le SWAP du transpileur déborde les frontières → LOI RATISS.</td></tr>
+<tr><td><img src="figures/fig_11_separes.png" width="460" alt="fig_11"/></td><td><b>🛰️ Garnet en chaînes séparées</b> — GHZ-3 : 94,5 % · GHZ-4 : 94,6 % · GHZ-5 : 88,5 % (jobs <code>b00d5038</code>/<code>0c094342</code>/<code>e167f04c</code>, 2 Sp chacun).</td></tr>
+<tr><td><img src="figures/fig_12_trilogie.png" width="460" alt="fig_12"/></td><td><b>🛰️ LA CARTE DU JOUR</b> — 8 états GHZ réels, 3 machines : ions −1,9 pt/qubit · Garnet −5 · Cepheus −10,5 ; le chat-12 à 66,0 % referme la courbe de Garnet.</td></tr>
+</table>
+
+---
+
 ## 📊 Les chiffres clés
 
 | Chiffre | Valeur | Nature |
@@ -221,7 +250,7 @@ Ce travail n'aurait pas tenu dans une journée sans l'intelligence artificielle 
 - **Calculateur infatigable** 🧮 : écrire, tester et rejouer la physique (bissection à 10⁻¹⁴, 512 états de Haar, intégration ΛCDM) en minutes — avec 40 tests qui la surveillent et qui ont attrapé ses bugs.
 - **Pilote de QPU** 🛰️ : soumettre 14 jobs sur 3 machines, lire les devis, sauver les workflows, compter chaque crédit — sous ordres humains explicites, tir par tir.
 - **Vérificateur honnête** 📚 : rejouer Fermi/LHAASO/Holometer depuis les sources, étiqueter ce qui est synthèse littéraire, refuser d'arrondir un chiffre.
-- **Illustrateur** 🎨 : les deux images de ce README sont générées par IA et **signalées comme telles** — l'esprit du labo et une vision, pas des faux documents.
+- **Illustrateur** 🎨 : les trois images d'ambiance de ce README (le labo réel, le mur cosmique, la vision) sont générées par IA et **signalées comme telles** — l'esprit du labo et des concepts, pas des faux documents. Les 12 figures de résultats, elles, sont **calculées**, pas générées.
 
 **La leçon** : l'IA est un instrument de laboratoire — comme un oscilloscope, mais qui sait aussi lire, écrire et se souvenir. Entre de mauvaises mains, elle embellit et elle invente. Entre de bonnes mains, avec des tests verts, des chiffres calculés et un chef qui décide, **elle rend la physique de pointe accessible depuis un téléphone, à Yaoundé, à 18 ans.** C'est littéralement la preuve par l'exemple. 🔥
 
@@ -239,7 +268,7 @@ python3 -m pytest tests/ -q       # 40/40 verts
 python3 outils/manifeste.py --verifier   # sceau du dépôt
 ```
 
-Cartographie : `planck/` (7 modules calculés) · `tests/` (40 tests) · `figures/` (12 figures) · `resultats/` (comptages QPU bruts, JSON) · `DONNEES/` (bases externes rejouées) · `outils/` (soumission QPU + sceau) · `RAPPORT-FINAL.md` (**le document source officiel complet**).
+Cartographie : `planck/` (7 modules calculés) · `tests/` (40 tests) · `figures/` (12 figures) · `assets/` (illustrations IA signalées) · `resultats/` (comptages QPU bruts, JSON) · `DONNEES/` (bases externes rejouées) · `outils/` (soumission QPU + sceau) · `RAPPORT-FINAL.md` (**le document source officiel complet**).
 
 ---
 
