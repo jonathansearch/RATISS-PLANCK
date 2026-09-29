@@ -1,11 +1,11 @@
 {
- "total_fichiers": 27,
- "octets_total": 2668270,
- "compile_le": "2026-09-29T13:25:06.938719+00:00",
+ "total_fichiers": 29,
+ "octets_total": 2937307,
+ "compile_le": "2026-09-29T14:06:46.259043+00:00",
  "fichiers": {
   "DONNEES/bases_externes.json": "484400d5a5dfdaf21892b4c6d47321997ea7ccf167a64fff42c6cf51a15497c4",
   "LICENSE": "da81290154612ad7f73dd9b417d9c97e811cde1a29d00065a6fa8ff3f353854c",
-  "README.md": "d1cf2f9ef007aac9322a9ea75b6025b61214c35f28b11a2ca7db3c6fbd7a576f",
+  "README.md": "2b0be800c5bc997499ca7b1183d881a7411932ff80aa1118438f1f023bbeb720",
   "figures/fig_1_mur.png": "2867d253251c2e2527b0e372635cb40dda402480dd19dcddd04cebe0edeedfd5",
   "figures/fig_2_collideur.png": "c04c36d18d871e545576795d84afb27a5867e8c12801fb968f767f6c0ccd89c4",
   "figures/fig_3_mousse.png": "3c77b9e2ff1b5c2cc88d72ba564cc92902430f67bc091af20f995eb63d5084e1",
@@ -14,6 +14,7 @@
   "figures/fig_6_page.png": "83174febbe1dc3aee84c8fa28c0f8339c7247f2a328bf7e17477092cdcaaaac3",
   "figures/fig_7_unruh.png": "4df0e4735563732614a03e5d216e3e56855463a41644bab1b52f96fca9f2696b",
   "figures/fig_8_bell_qpu.png": "12edd3c52e111ced1caebeb55599d70695762358ea60a23b51691de36e4915f7",
+  "figures/fig_9_ghz7_qpu.png": "bb0ca87e02b5709c83c21fd26527d0f1903e0d864a407a5df1e1ac1ccba78d71",
   "outils/manifeste.py": "2288c6b7f8847d4f060dfa1de1440d2188d80e0840c5ff51cd3494ed2280c0ce",
   "outils/soumettre_qpu.py": "4642b73fa100decb3b6b75cfbff5859119f5d2e70345563517d0c41c7a240d70",
   "planck/constantes.py": "c9782f23a93171f001af2e0912df224193b4ef2af6f16fe7293fe53cca53596d",
@@ -27,6 +28,7 @@
   "planck/qubit.py": "820a6fb0b95f9fd811f35cafd6ce65c47f7bd6767c24e64a0b70fff3e4cac182",
   "planck/unruh.py": "e803e6c6b24ebfca263ff85866bdfd79adbc100021d1df8fa07b285a8ef6d93a",
   "resultats/qpu_bell_20260929.json": "21e5b9a6e7a690ca7f91d4db8fb2912d4efd1e6cc8b8fb7acb7a30e20a72a787",
+  "resultats/qpu_ghz7_20260929.json": "e3459ef6c4e7210c0d7750afeca43e8d57e2194a96496ae798e2799264bd48db",
   "tests/test_page_unruh.py": "79e809ed8d005c1d699fe73faa762edbfe2813b6cf91e786bbc78883c582c64f",
   "tests/test_planck.py": "1f3cebd9d5b0d9d941241ac4b4151aac3f49a3ffb0c906c3e376fdc3f4181a1c",
   "tests/test_qubit.py": "f6b308759bc7faa72ebc03ed474eb3df770cb18d2cf48909b254710c5539fca7"

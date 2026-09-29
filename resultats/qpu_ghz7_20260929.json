@@ -1,0 +1,14 @@
+{
+  "type": "ETAT DE GHZ 7 QUBITS — QPU réel (🛰️ terrain)",
+  "date": "2026-09-29",
+  "plateforme": "Open Quantum — attribution requise (plan public)",
+  "job_id": "f348285e-1d02-4fcb-b263-e73ccba4597b",
+  "organisation": "Tym Sama",
+  "backend": "AQT IBEX Q1 — 12 qubits ions piégés, all-to-all",
+  "circuit": "GHZ-7 : h q[0]; cx q[0],q[1..6]; mesure des 7",
+  "shots": 1024,
+  "comptages_ideaux": {"0000000": 470, "1111111": 452},
+  "fidélité_ghz": 0.9004,
+  "erreurs": 102,
+  "commentaire": "922/1024 dans les deux états de chat. Les erreurs sont dominées par les flips d'un bit unique (ex. 0111111 = 16) — signature classique de décohérence ion. Bell (2q) 99,61 % → GHZ (7q) 90,04 % : PREMIÈRE DONNÉE DE SCALING du labo, la cohérence décroît avec la taille, exactement le terrain de la courbe de Page (fig_6)."
+}

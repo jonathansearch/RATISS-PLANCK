@@ -6,7 +6,7 @@
 > ou s'il y a des fluctuations encore plus petites »
 
 **Type de campagne : 🧮 in silico + bases réelles. Zéro matériel, zéro promesse.**
-**40/40 tests verts · 8 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
+**40/40 tests verts · 9 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
 
 ---
 
@@ -120,6 +120,22 @@ Et le plus beau : **le jour même, la donnée fraîche de la mission donnait 99,
 ⚠️ *Débit crédits : le solde actuel ne permet plus de soumettre — les 50 $ gratuits sont À RÉCLAMER sur le tableau de bord (Facturation → « 50 $ à réclamer »). Dès réclamation : GHZ-7 (le lien réel vers la courbe de Page, fig_6), puis comparaison Garnet/Emerald/Cepheus-1-108Q. Le canon est armé : `outils/soumettre_qpu.py ghz7`.*
 
 *Attribution (plan public Open Quantum) : résultats obtenus via www.openquantum.com — citation requise pour toute publication.*
+
+### 🛰️ v0.4 (même jour, 15 h) — GHZ-7 : la PREMIÈRE donnée de scaling du labo
+
+Deuxième vol, compte « Tym Sama » (25 Spark, job `f348285e-1d02-4fcb-b263-e73ccba4597b`) : **état de GHZ à 7 qubits** (h + 6 CNOT en chaîne, 1024 tirs) sur le même IBEX Q1 :
+
+| État | Comptages |
+|---|---|
+| `0000000` | **470** |
+| `1111111` | **452** |
+| flips d'1 bit (dominants) | ~48 |
+| autres erreurs | ~54 |
+| **Fidélité GHZ-7** | **90,04 %** (922/1024) — `figures/fig_9_ghz7_qpu.png` |
+
+**Et c'est LA phrase de la journée :** Bell à 2 qubits = 99,61 % · GHZ à 7 qubits = 90,04 %. **La cohérence décroît avec la taille — mesuré par nous, sur du vrai matériel, le même jour.** C'est exactement le terrain de la courbe de Page (fig_6) : comprendre où va l'information quand l'intrication grandit et fuit. Le labo RATISS tient maintenant les deux bouts de la chaîne : le calcul (🧮) ET la mesure (🛰️).
+
+*(Crédit restant : 10 Spark — le prochain vol attend la réclamation des 50 $.)*
 
 ## 🎯 Verdict de la mission (en 3 lignes)
 
