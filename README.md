@@ -6,7 +6,7 @@
 > ou s'il y a des fluctuations encore plus petites »
 
 **Type de campagne : 🧮 in silico + bases réelles. Zéro matériel, zéro promesse.**
-**26/26 tests verts · 5 figures · graine 20260929 · étiquettes calcul/synthèse jamais mélangées.**
+**40/40 tests verts · 7 figures · graine 20260929 · étiquettes calcul/synthèse jamais mélangées.**
 
 ---
 
@@ -79,6 +79,30 @@ Prémisse calculée (Landauer) : **un qubit sans porteur n'existe pas** — l'in
 
 **Verdict du voyage (3 zones, fig_5 droite) :** LIBRE au-dessus de 100 ℓ_P (l'écume est inoffensive) · AU MUR entre √2 et 100 ℓ_P (9,1 bits de marge au plancher) · TROU NOIR en dessous (porteur effondré, sort du qubit = question ouverte n°1 du domaine). **Le porteur d'information va aussi loin que la matière — pas plus loin — mais il va plus loin que la QUESTION : le paradoxe qu'il ouvre est le vrai chantier.**
 
+## 🌊 v0.2 — les options (a) et (b) du chef : Page et Unruh (🧮)
+
+### (a) La courbe de Page — `page.py` + `fig_6_page.png` : l'information RESSORT
+
+Question : pendant l'évaporation, où passe l'information du trou noir ? **Modèle jouet de Page (étiqueté comme tel)** : 512 états purs de Haar sur N=12 qubits, entropie du rayonnement en fonction des qubits émis.
+
+- La simulation colle la **formule analytique de Page à 0,001 bit** sur tout le parcours (testée, y compris sur l'exemple calibré publié de Page : 4×4 dims = 1,3306 bits exactement).
+- **Le virage est là** : l'entropie monte (0 → 5,28 bits), pic EXACTEMENT à N/2, redescend (→ 0). Hawking naïf (thermique à jamais, ligne pointillée) est contredit : **le rayonnement « sait déjà tout » à la moitié de l'évaporation**.
+- ⚠️ Deux bugs attrapés par nos propres tests en route : la somme de Page va jusqu'à **m·n** (dims multipliées — ma première version avait m+n) et un facteur ½ dans la moyenne. Corrigés, testés, documentés — l'honnêteté RATISS inclut nos propres erreurs.
+
+### (b) L'effet Unruh — `unruh.py` + `fig_7_unruh.png` : 31 ordres de glace, puis le flambage
+
+Le qubit porteur est un observateur accéléré : T_U = ħa/(2πck_B).
+
+| Étape du voyage | a (m/s²) | T_Unruh |
+|---|---|---|
+| la Terre (1 g) | 9,81 | 4,0×10⁻²⁰ K |
+| proton du LHC | 3,2×10¹³ | 1,3×10⁻⁷ K |
+| **seuil du qubit 5 GHz** | 3,0×10¹⁹ | **0,12 K** |
+| horizon du micro-BH | 1,4×10⁵¹ | **5,6×10³⁰ K = T_H** |
+
+- **Le principe d'équivalence, chiffré et TESTÉ** : à la gravité de surface du micro-trou noir (κ = c⁴/4Gm_P), le bain Unruh = la température de Hawking exactement (accord < 10⁻⁶).
+- **Verdict du voyage** : entre le seuil de décohérence du qubit (0,12 K à 3×10¹⁹ m/s²) et l'horizon (1,4×10⁵¹ m/s²), il y a **31 ordres de grandeur** — le porteur voyage DANS LA GLACE jusqu'au bord, puis tout flambe d'un coup. La décohérence Unruh n'est pas un frein du voyage : c'est la DÉFINITION du mur.
+
 ## 🎯 Verdict de la mission (en 3 lignes)
 
 1. **Le mur existe comme croisement des équations, pas comme pixel** — le prouver « frontière » est impossible avec les données actuelles, et les données DISPOULAIENT déjà la version naïve.
@@ -93,6 +117,8 @@ python3 planck/mur.py           # croisement, seuil √2 ℓ_P, collideur
 python3 planck/mousse.py        # GRB 090510, retards, pixel maximal
 python3 planck/depassement.py   # la barrière de trou noir
 python3 planck/qubit.py         # le qubit informationnel au mur
+python3 planck/page.py          # la courbe de Page (modèle jouet)
+python3 planck/unruh.py         # l'effet Unruh le long du voyage
 python3 planck/figures.py       # les 4 figures
 python3 tests/test_planck.py    # 14/14
 ```
