@@ -1,7 +1,7 @@
 {
  "total_fichiers": 27,
- "octets_total": 2664841,
- "compile_le": "2026-09-29T13:24:55.450922+00:00",
+ "octets_total": 2668270,
+ "compile_le": "2026-09-29T13:25:06.938719+00:00",
  "fichiers": {
   "DONNEES/bases_externes.json": "484400d5a5dfdaf21892b4c6d47321997ea7ccf167a64fff42c6cf51a15497c4",
   "LICENSE": "da81290154612ad7f73dd9b417d9c97e811cde1a29d00065a6fa8ff3f353854c",
@@ -13,7 +13,7 @@
   "figures/fig_5_qubit.png": "2108fbc0147a25dd7b8d3c5de1fbdfdf409e49d0daf62ef939d952cf0abbbde3",
   "figures/fig_6_page.png": "83174febbe1dc3aee84c8fa28c0f8339c7247f2a328bf7e17477092cdcaaaac3",
   "figures/fig_7_unruh.png": "4df0e4735563732614a03e5d216e3e56855463a41644bab1b52f96fca9f2696b",
-  "figures/fig_8_bell_qpu.png": "1fa9954bcbaf3182d13047eee65416d73c145e3d040abf97d81aec815514647d",
+  "figures/fig_8_bell_qpu.png": "12edd3c52e111ced1caebeb55599d70695762358ea60a23b51691de36e4915f7",
   "outils/manifeste.py": "2288c6b7f8847d4f060dfa1de1440d2188d80e0840c5ff51cd3494ed2280c0ce",
   "outils/soumettre_qpu.py": "4642b73fa100decb3b6b75cfbff5859119f5d2e70345563517d0c41c7a240d70",
   "planck/constantes.py": "c9782f23a93171f001af2e0912df224193b4ef2af6f16fe7293fe53cca53596d",
