@@ -1,0 +1,30 @@
+{
+ "type": "TIRS SÉPARÉS Garnet — GHZ-3/4/5 en chaînes natives (🛰️)",
+ "date": "2026-09-29, soirée",
+ "plateforme": "Open Quantum — attribution requise",
+ "jobs": {
+  "GHZ-3": "b00d5038-bcb1-4f77-9c6d-c2a0846ac3e5",
+  "GHZ-4": "0c094342-694d-4acf-8a59-a8fad72119a6",
+  "GHZ-5": "e167f04c-d813-4af1-804c-d73ec4029db4"
+ },
+ "backend": "IQM Garnet (20q supra, lattice carrée) — circuits en CHAÎNE (h q0; cx q_i,q_i+1)",
+ "shots": "3 x 1024",
+ "fidelites": {
+  "GHZ-3": 94.5,
+  "GHZ-4": 94.6,
+  "GHZ-5": 88.5
+ },
+ "cout_total": "6 crédits (2/job)",
+ "conclusion": "LOI RATISS DU SHOT ÉPISODIQUE : les compartiments co-hébergés ne survivent à la transpilation QUE sur all-to-all (ions). Sur lattice, chaînes natives en jobs séparés = 88-95 %. La comparaison épisodique(45 %) vs séparé(94 %) au MÊME moment sur la MÊME machine isole proprement l'effet transpileur.",
+ "scaling_du_jour": {
+  "IBEX ions": {
+   "Bell-2": 99.61,
+   "GHZ-7": 90.04
+  },
+  "Garnet supra": {
+   "GHZ-3": 94.5,
+   "GHZ-4": 94.6,
+   "GHZ-5": 88.5
+  }
+ }
+}

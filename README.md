@@ -6,7 +6,7 @@
 > ou s'il y a des fluctuations encore plus petites »
 
 **Type de campagne : 🧮 in silico + bases réelles. Zéro matériel, zéro promesse.**
-**40/40 tests verts · 9 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
+**40/40 tests verts · 11 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
 
 ---
 
@@ -146,6 +146,20 @@ Deuxième vol, compte « Tym Sama » (25 Spark, job `f348285e-1d02-4fcb-b263-e73
 - **Verdict RATISS (résultat réel, pas un échec)** : le shot épisodique exige l'all-to-all — ou une transpilation explicite avec layouts sur étoiles natives (prochain vol, toujours 2 crédits). **La leçon d'architecture vaut le détour : on sait maintenant POURQUOI.**
 
 *(Trois comptes, trois organisations, trois files : Jonathan Evina → Tym Sama → Patrice Lagloire → Jonathan Sama. Le labo a appris à gérer un arsenal.)*
+
+### 🛰️ v0.6 (fin de soirée) — les tirages SÉPARÉS : la réponse du chef, le scaling du labo
+
+**Ordre du chef : « fais les tirages séparément, 3 requêtes. »** Exécuté sur Garnet en chaînes natives (`h q0; cx q_i,q_{i+1}`) — jobs `b00d5038`/`0c094342`/`e167f04c`, 3 × 1024 tirs, 6 crédits :
+
+| GHZ | épisodique (12q) | **séparé** |
+|---|---|---|
+| GHZ-3 | 92,3 / 92,5 % | **94,5 %** |
+| GHZ-4 | 47,6 / 44,5 % | **94,6 %** |
+| GHZ-5 | 44,7 / 45,9 % | **88,5 %** |
+
+**Loi RATISS du shot épisodique (donnée réelle, même machine, même heure) :** les compartiments co-hébergés ne survivent à la transpilation **que sur all-to-all** (ions). Sur lattice : chaînes natives en jobs séparés = 88-95 %. L'écart 45 % ↔ 94 % isole proprement l'effet du transpileur — **une petite expérience de systèmes qui vaut un paragraphe de papier.**
+
+**Et la figure fig_11 droite : le PREMIER scaling croisé RATISS** — ions IBEX (99,6 % @2q → 90,0 % @7q) et supra Garnet (94,5/94,6/88,5 % @3/4/5q), mesurés le même jour. Le labo tient désormais : deux technologies, cinq états de GHZ, une méthode. Patrice `407cd969` dort encore dans la file IBEX — demain, les mêmes compartiments sur ions complètent le tableau.
 
 ## 🎯 Verdict de la mission (en 3 lignes)
 
