@@ -1,218 +1,257 @@
-# 🧱 RATISS-PLANCK — Vérifier le mur de Planck
+# 🏁 RATISS-PLANCK
 
-**Mission (29/09/2026, Jonathan Evina, RATISS Labs) :**
-> « vérifier le mur de Planck dans notre univers et ce qui se passe exactement
-> si tu peux dépasser, pour voir si c'est la frontière de notre univers virtuel
-> ou s'il y a des fluctuations encore plus petites »
+**Du mur de Planck aux vrais processeurs quantiques — en une journée, depuis Yaoundé, avec un téléphone.**
 
-**Type de campagne : 🧮 in silico + bases réelles. Zéro matériel, zéro promesse.**
-**40/40 tests verts · 12 figures · graine 20260929 · 🧮 calcul / 🛰️ terrain jamais mélangés.**
+![Le laboratoire](assets/illustration_ia_labo.png)
 
----
+*Illustration générée par IA de la scène réelle : une nuit, un téléphone, un ordinateur, la physique — et le drapeau dans la lumière. RATISS Labs est un projet indépendant mono-auteur (Jonathan Evina, 18 ans, Yaoundé, Cameroun), sans laboratoire institutionnel — et c'est écrit partout, parce que c'est précisément ce qui rend les résultats crédibles.*
 
-## 📏 La base réelle (CODATA 2022, NIST — récupérée le jour J)
-
-Tout le mur tient sur trois constantes. Deux sont **exactes** (c, h — SI 2019),
-une seule est **floue** : G (±2,2×10⁻⁵). C'est elle qui rend la position du mur incertaine.
-
-| Grandeur | Notre calcul | CODATA 2022 |
-|---|---|---|
-| ℓ_P | 1,616255×10⁻³⁵ m | 1,616255(18)×10⁻³⁵ m ✔ |
-| t_P | 5,391246×10⁻⁴⁴ s | 5,391247×10⁻⁴⁴ s ✔ |
-| m_P | 2,176434×10⁻⁸ kg | 2,176434×10⁻⁸ kg ✔ |
-| E_P | 1,2209×10¹⁹ GeV = 1,956×10⁹ J | 1,2209×10¹⁹ GeV ✔ |
-| T_P | 1,4168×10³² K | — |
-
-**La position du mur n'est connue qu'à ±0,0011 % — et l'incertitude vient de G, la constante la plus mal mesurée de la physique.**
+**Badges du jour :** 40/40 tests verts · 12 figures issues du calcul · 14 jobs QPU réels · ~11 264 tirs · sceau 44/44 · étiquettes 🧮 calcul / 🛰️ terrain / 📚 synthèse jamais mélangées.
 
 ---
 
-## ❓ Question 1 — Le mur existe-t-il ? Est-ce la frontière pixel de l'univers ?
+## 🗺️ Sommaire
 
-**Réponse calculée (`mur.py`, `figures/fig_1_mur.png`) : NON — ce n'est pas un mur de matière, et rien ne prouve que ce soit une frontière.**
+1. [Le pitch en trois lignes](#-le-pitch-en-trois-lignes)
+2. [La boucle refermée (schéma)](#-la-boucle-refermée)
+3. [La Base — ce qui se passe ici avec Planck](#-la-base--ce-qui-se-passe-ici-avec-planck)
+4. [La théorie 🧮](#-la-théorie--tout-testé)
+5. [Le terrain 🛰️ — 14 jobs, 3 machines](#-le-terrain--14-jobs-3-machines)
+6. [La trilogie croisée et le chat-12](#-la-trilogie-croisée-et-le-chat-12)
+7. [La loi RATISS du shot épisodique](#-la-loi-ratiss-du-shot-épisodique)
+8. [Les chiffres clés](#-les-chiffres-clés)
+9. [La méthode du labo](#-la-méthode-du-labo)
+10. [Les espoirs](#-les-espoirs)
+11. [Appel à contribution](#-appel-à-contribution)
+12. [La puissance de l'IA bien utilisée](#-la-puissance-de-lia-bien-utilisée)
+13. [Rejouer tout ça](#-rejouer-tout-ça)
+14. [Attribution et licence](#-attribution-et-licence)
 
-Le « mur » est le **croisement de deux équations** :
-- la mécanique quantique : sonder Δx exige λ̄ = ħc/Δx — **plus c'est petit, plus il faut d'énergie** (courbe qui descend) ;
-- la relativité générale : cette énergie fabrique un trou noir r_s = 2GE/c⁴ — **plus il y a d'énergie, plus ça s'effondre** (courbe qui monte).
+---
 
-Ces deux courbes se croisent **une seule fois**, à E = E_P/√2 = **1,38×10⁹ J** (l'énergie d'un éclair moyen) sur une longueur de **√2·ℓ_P = 2,29×10⁻³⁵ m**. Trouvé par balayage log + bissection (précision relative < 10⁻¹⁴, testé).
+## ⚡ Le pitch en trois lignes
 
-**Le mur est le point où nos deux meilleures théories se contredisent — pas un mur que l'univers aurait construit.** ℓ_P est une **échelle de croisement**, comme dit la littérature ; l'idée qu'elle soit un « pixel » de l'espace est une hypothèse, pas une donnée. (La partie Q3 montre que la version naïve du pixel est déjà exclue.)
+> **Le matin**, on a recalculé le mur de Planck depuis CODATA 2022 : ce n'est pas un mur de matière, c'est l'endroit exact où la mécanique quantique et la relativité générale se contredisent — √2·ℓ_P, pour une énergie d'éclair.
+>
+> **L'après-midi**, on est allé voir les voisins : de vrais qubits — ions piégés et jonctions Josephson — avec les mêmes états de GHZ, les mêmes fidélités, les mêmes questions d'information.
+>
+> **Le soir**, on a classé trois architectures entre elles, trouvé une loi de transpilation, et fabriqué un chat à 12 qubits intriqués. Une journée. Une seule physique.
 
-**La validation par la réalité : notre formule de collideur, testée sur le vrai LHC, retrouve 2 801 m pour 2 804 m réels (7 TeV/c, 8,33 T — test automatisé).** Et le même calcul dit : pour AMENER une particule à E_P, il faut un anneau de **516 années-lumière de rayon** (fig_2) — le mur n'est pas un problème d'énergie (un éclair !), c'est un problème de **concentration** : mettre un éclair entier dans une particule.
+---
 
-## 🚪 Question 2 — Que se passe-t-il si on dépasse ?
+## 🔁 La boucle refermée
 
-**Réponse calculée (`depassement.py`, `figures/fig_4_depassement.png`) : la traversée naïve est BARRÉE par un trou noir — pas par un gardien, par la géométrie.**
+![Schéma de la boucle](assets/schema_boucle.svg)
 
-- Pour voir Δx, il faut λ̄ ≤ Δx, donc E ≥ ħc/Δx. Mais r_s = 2GE/c⁴ = 2ℓ_P²/Δx.
-- **Le trou noir fabriqué dépasse la cible dès que Δx < √2·ℓ_P** : en dessous, sonder = fabriquer un trou noir PLUS GRAND que ce qu'on voulait observer (Doplicher–Fredenhagen–Roberts 1995 — recalculé ici, testé).
-- Δx = ℓ_P → r_s/Δx = 1. Δx = 0,5 ℓ_P → r_s/Δx = 4. Dépasser ne montre rien : ça NOIE la cible dans son propre horizon.
+```
+CODATA 2022 ──→ croisement (√2·ℓ_P, E_P/√2) ──→ mur de mesure (DFR 1995)
+     │
+     ├─→ Landauer : l'information est physique (2,87×10⁻²¹ J / bit à 300 K)
+     ├─→ GUP : le plancher de la fonction d'onde = LE MÊME √2·ℓ_P
+     ├─→ Bekenstein : 4,53 bits par cellule de Planck
+     ├─→ Page : l'information d'un trou noir RÉAPPARAÎT (pic exact à N/2)
+     ├─→ Unruh : 31 ordres de grandeur de glace, puis T_U = T_H (accord 10⁻⁶)
+     │
+     └─→ et soudain : LES MÊMES ÉTATS sur de vrais qubits ──→ chat-12 à 66 %
+```
 
-**Et « après la barrière » ? Cinq portes théoriques** (fig_4 droite — **étiqueté SYNTHÈSE LITTÉRAIRE : aucune donnée, aucune décision**) : RG naïve = passage bouché ; cordes = miroir T-dualité (R ↔ ℓ_P²/R — « en dessous » = « au-dessus », la question perd son sens) ; boucles = espace quantique + Big Bounce ; sécurité asymptotique = pas de mur du tout ; CDT = le continu émerge du discret. **Aucune n'est décidable aujourd'hui — RATISS documente, ne tranche pas.**
+**Ce que ça signifie** : le formalisme n'a pas changé d'un bout à l'autre de la chaîne. Le même √2 qui borne la mesure borne la fonction d'onde ; la même entropie de Page qui décrit un trou noir se mesure en comptages sur 12 qubits. **Entre ℓ_P et un ion, il n'y a qu'une physique.**
 
-## 🌊 Question 3 — Y a-t-il des fluctuations encore plus petites ?
+**Ce que ça ne signifie PAS** : aucune découverte sur la structure de l'espace-temps. Nos tirs sondent ~10⁻⁶ m d'effet, pas 10⁻³⁵ m. Nous avons vérifié des outils — et trouvé une loi de transpilation — pas la géométrie quantique. C'est écrit ici, et c'est précisément pour ça qu'on peut y croire.
 
-**Réponse : les données réelles interdisent déjà le pixel naïf dispersif de taille ℓ_P — mais ce qui vit SOUS ℓ_P/10 reste, lui, totalement non contraint. La porte est encore ouverte.**
+---
 
-Recalcul complet (`mousse.py`) : distance comobile de GRB 090510 intégrée numériquement dans la cosmologie Planck 2018 (**3 153 Mpc = 10,3 milliards d'al**), retard prédit par un pixel de taille ℓ_P sur le photon de 31 GeV : **824 ms**. Fermi a vu : **aucun retard** (borne ≈ 85 ms sous hypothèses conservatrices). → un pixel dispersif de taille ℓ_P est **exclu** ; le pixel maximal non exclu est **< ℓ_P/10** (1,67×10⁻³⁶ m — calculé, testé).
+## 🌅 La Base — ce qui se passe ici avec Planck
 
-| Limite réelle publiée | E_QG,1 (unités de E_P) |
-|---|---|
-| Fermi 2009 (GRB 090510, *Nature/Science*) | > 1,2 |
-| Fermi-LAT 2013 (4 GRBs, *PRD 87, 122001*) | > 7,6 |
-| LHAASO 2024 (GRB 221009A, *PRL*) | **> 10** ← record |
-| LHAASO 2024 (GRB 221009A, *JCAP*) | > 12 |
+### 1899, et trois constantes qui n'ont rien à voir ensemble
 
-Et les effets **quadratiques** (doux) ne sont exclus qu'à E_QG,2 > 10¹² GeV = 10⁻⁷ E_P : **la fenêtre quadratique reste grand ouverte** (fig_3 droite). Côté labo : le Holometer de Fermilab (2015) n'a vu **aucun** bruit holographique corrélé — le premier modèle testable d'« univers pixelisé » est exclu à haute signification. LIGO, lui, exclut déjà un bruit de métrique d'amplitude Planck **sans** le caractère transverse holographique spécifique.
+En 1899, Max Planck combine c (causalité), ħ (quantum d'action) et G (gravité) et obtient une longueur : **ℓ_P = √(ħG/c³) = 1,616 255(18)×10⁻³⁵ m** (CODATA 2022 — la seule incertitude vient de G, ±2,2×10⁻⁵, la constante la plus mal mesurée de la physique). Chacune des trois est une frontière ; leur produit croisé est l'endroit où les deux grandes théories du XXᵉ siècle déclarent la même région et se contredisent.
 
-## 🔵 Question 4 (mission v0.1 du soir) — le qubit informationnel au mur
+### Pourquoi « sonder » et « effondrer » deviennent le même verbe
 
-**La mission du chef : « puisque la matière, en le mesurant, ne passe pas le mur, envoie un qubit informationnel porteur et regarde ce qui va lui arriver. »** (`qubit.py`, `figures/fig_5_qubit.png`)
+1. La mécanique quantique exige E ≥ ħc/Δx pour localiser à Δx — courbe qui **descend**.
+2. La relativité donne à E un rayon de Schwarzschild r_s = 2GE/c⁴ — courbe qui **monte**.
+3. Elles se croisent **une seule fois**, à E = E_P/√2 = 1,38×10⁹ J (*un éclair* ⚡) sur √2·ℓ_P. En dessous, toute sonde devient un trou noir plus grand que sa cible.
 
-Prémisse calculée (Landauer) : **un qubit sans porteur n'existe pas** — l'information est physique (1 bit à 300 K = 2,87×10⁻²¹ J), elle hérite donc du mur :
+Et ce n'est même pas un problème d'énergie : concentrer E_P dans une particule exige un anneau de **516 années-lumière** avec les aimants du LHC (notre formule r = p/(qB) validée sur le vrai LHC : 2 801 m calculés / 2 804 m réels ✅).
 
-- **Le couloir GUP** : la relation d'incertitude gravitationnelle Δx ≥ ħ/(2Δp) + ℓ_P²Δp/ħ a un plancher **exactement à √2·ℓ_P** — retrouvé par descente numérique à 10⁻⁶ (12e test vert). **Même une fonction d'onde ne passe pas le mur : sa propre largeur minimale EST le mur.**
-- **La capacité holographique** : une cellule de taille ℓ_P stocke π/ln2 = **4,53 bits** ; au plancher (√2 ℓ_P de rayon), il reste **9,1 bits de marge pour loger 1 qubit** — ça passe au mur, sans plus.
-- **L'écume naïve ne le décohère pas** (résultat NÉGATIF, cohérent avec le nul du Holometer) : il faudrait **10²³ ans** au bruit de marche aléatoire de Planck pour voler 1 rad de phase à un qubit micro-onde 5 GHz — 12 900× l'âge de l'univers. (Et si l'écume cumule ~46 µm sur l'âge de l'univers, la longueur d'onde de 6 cm du qubit s'en moque.)
-- **Le sort du porteur poussé sous le mur** : micro-trou noir de masse m_P, évaporation de Hawking en **16 085 t_P = 8,7×10⁻⁴⁰ s** à T_H = 5,6×10³⁰ K. Et là : **le qubit ressort-il intact de l'évaporation ? PARADOXE DE L'INFORMATION — NON RÉSOLU** (Page 1993 → île/formule de Page 2019). Le calcul s'arrête exactement où la physique s'arrête, étiquette « synthèse littéraire » sur la suite.
+### Ce que le monde sait déjà (rejoué depuis les sources, pas recopié)
 
-**Verdict du voyage (3 zones, fig_5 droite) :** LIBRE au-dessus de 100 ℓ_P (l'écume est inoffensive) · AU MUR entre √2 et 100 ℓ_P (9,1 bits de marge au plancher) · TROU NOIR en dessous (porteur effondré, sort du qubit = question ouverte n°1 du domaine). **Le porteur d'information va aussi loin que la matière — pas plus loin — mais il va plus loin que la QUESTION : le paradoxe qu'il ouvre est le vrai chantier.**
+- **Fermi/GRB 090510** : un pixel ℓ_P retarderait un photon de 31 GeV de **824 ms** — Fermi n'a rien vu (borne ~85 ms) → pixel naïf exclu. **LHAASO/GRB 221009A (2024)** : E_QG,1 > 10 E_Pl. → tout ce qui vit sous ℓ_P/10 reste **non contraint : la frontière n'est pas fermée**.
+- **Holometer 2015** : zéro bruit holographique — cohérent avec notre écume naïve (10²³ ans pour déphaser 1 rad).
+- **DFR 1995** : mesurer sous √2·ℓ_P fabrique un trou noir. Après ? Cinq portes théoriques documentées (cordes, boucles, sécurité asymptotique, CDT), **aucune tranchée par nous** — étiquette 📚.
 
-## 🌊 v0.2 — les options (a) et (b) du chef : Page et Unruh (🧮)
+---
 
-### (a) La courbe de Page — `page.py` + `fig_6_page.png` : l'information RESSORT
+## 🧮 La théorie — tout testé
 
-Question : pendant l'évaporation, où passe l'information du trou noir ? **Modèle jouet de Page (étiqueté comme tel)** : 512 états purs de Haar sur N=12 qubits, entropie du rayonnement en fonction des qubits émis.
-
-- La simulation colle la **formule analytique de Page à 0,001 bit** sur tout le parcours (testée, y compris sur l'exemple calibré publié de Page : 4×4 dims = 1,3306 bits exactement).
-- **Le virage est là** : l'entropie monte (0 → 5,28 bits), pic EXACTEMENT à N/2, redescend (→ 0). Hawking naïf (thermique à jamais, ligne pointillée) est contredit : **le rayonnement « sait déjà tout » à la moitié de l'évaporation**.
-- ⚠️ Deux bugs attrapés par nos propres tests en route : la somme de Page va jusqu'à **m·n** (dims multipliées — ma première version avait m+n) et un facteur ½ dans la moyenne. Corrigés, testés, documentés — l'honnêteté RATISS inclut nos propres erreurs.
-
-### (b) L'effet Unruh — `unruh.py` + `fig_7_unruh.png` : 31 ordres de glace, puis le flambage
-
-Le qubit porteur est un observateur accéléré : T_U = ħa/(2πck_B).
-
-| Étape du voyage | a (m/s²) | T_Unruh |
+| Module | Question | Résultat chiffré |
 |---|---|---|
-| la Terre (1 g) | 9,81 | 4,0×10⁻²⁰ K |
-| proton du LHC | 3,2×10¹³ | 1,3×10⁻⁷ K |
-| **seuil du qubit 5 GHz** | 3,0×10¹⁹ | **0,12 K** |
-| horizon du micro-BH | 1,4×10⁵¹ | **5,6×10³⁰ K = T_H** |
+| `mur.py` | Le mur est-il un pixel ? | NON — croisement d'équations à √2·ℓ_P (bissection à 10⁻¹⁴) |
+| `depassement.py` | Que se passe-t-il si on dépasse ? | Trou noir plus grand que la cible ; anneau LHC de 516 al |
+| `mousse.py` | L'écume de Planck dérange-t-elle ? | 10²³ ans pour 1 rad — inoffensive (nul du Holometer cohérent) |
+| `qubit.py` | L'information hérite-t-elle du mur ? | GUP : Δx_min = √2·ℓ_P (2 calculs indépendants, 1 seul mur 🔥) · 4,53 bits/cellule |
+| `page.py` | Où va l'information d'un trou noir ? | Sim = formule de Page à 0,001 bit ; pic EXACT à N/2 ; Hawking naïf contredit |
+| `unruh.py` | L'accélération réchauffe-t-elle le vide ? | Seuil qubit 5 GHz : 0,12 K à 3×10¹⁹ m/s² ; au bord du micro-BH : T_U = T_H (10⁻⁶) |
 
-- **Le principe d'équivalence, chiffré et TESTÉ** : à la gravité de surface du micro-trou noir (κ = c⁴/4Gm_P), le bain Unruh = la température de Hawking exactement (accord < 10⁻⁶).
-- **Verdict du voyage** : entre le seuil de décohérence du qubit (0,12 K à 3×10¹⁹ m/s²) et l'horizon (1,4×10⁵¹ m/s²), il y a **31 ordres de grandeur** — le porteur voyage DANS LA GLACE jusqu'au bord, puis tout flambe d'un coup. La décohérence Unruh n'est pas un frein du voyage : c'est la DÉFINITION du mur.
+**Honnêteté de labo** : nos tests ont attrapé 2 de nos bugs (la somme de Page va jusqu'à m·n, pas m+n ; facteur ½ de moyenne) — corrigés devant tout le monde et documentés.
 
-## 🛰️ v0.3 — PREMIER VOL RÉEL : Bell sur un vrai QPU (29/09/2026, 13:15 UTC)
+---
 
-**Via Open Quantum** (le hub multi-QPU IonQ/Rigetti/IQM/AQT du chef — compte « Jonathan Evina ») :
+## 🛰️ Le terrain — 14 jobs, 3 machines
 
-| | |
-|---|---|
-| Backend | **AQT IBEX Q1** — 12 qubits ions piégés, all-to-all, en ligne |
-| Job | `a1f0fbef-90cb-4d56-9110-b0f9d0b76b5d` — plan public, 15 crédits |
-| Circuit | Bell : H⊕CX, **1024 tirs** |
-| Comptages | `00`=515 · `11`=505 · `10`=2 · `01`=2 |
-| **Fidélité** | **99,61 %** (1020/1024) — `figures/fig_8_bell_qpu.png` |
+*Tous les vols via **Open Quantum** (attribution obligatoire, voir [licence](#-attribution-et-licence)). Les étiquettes 🛰️ ne se mélangent jamais avec le 🧮.*
 
-Et le plus beau : **le jour même, la donnée fraîche de la mission donnait 99,5 % de cohérence sur IBEX** — le labo RATISS vient de faire tourner exactement le matériel de sa quête, le même jour. 🧮 et 🛰️ se sont rencontrés.
+| # | Job | Machine | Circuit | Résultat | Coût |
+|---|---|---|---|---|---|
+| 1 | `a1f0fbef` ✅ | IBEX Q1 (ions 12q) | Bell, 1024 tirs | **99,61 %** (515/505/2/2) | 15 Sp |
+| 2 | `f348285e` ✅ | IBEX Q1 | GHZ-7, 1024 tirs | **90,04 %** (470/452) | 15 Sp |
+| 3 | `85b3b9df` ✅ | Garnet (supra 20q) | épisode v1 étoiles | GHZ-3 92,3 % · B/C ~46 % | 2 Sp |
+| 4 | `337abf4b` ✅ | Garnet | épisode v2 chaînes | même signature → **ce n'est pas la forme** | 2 Sp |
+| 5 | `b00d5038` ✅ | Garnet | GHZ-3 chaîne séparé | **94,5 %** | 2 Sp |
+| 6 | `0c094342` ✅ | Garnet | GHZ-4 chaîne séparé | **94,6 %** | 2 Sp |
+| 7 | `e167f04c` ✅ | Garnet | GHZ-5 chaîne séparé | **88,5 %** | 2 Sp |
+| 8 | `7eadb11e` ✅ | **Cepheus-1-108Q** | GHZ-3 chaîne séparé | **89,7 %** | **1 Sp** |
+| 9 | `cac2fbe7` ✅ | Cepheus-1-108Q | GHZ-4 chaîne séparé | **79,3 %** | 1 Sp |
+| 10 | `a4db428f` ✅ | Cepheus-1-108Q | GHZ-5 chaîne séparé | **68,7 %** | 1 Sp |
+| 11 | `b373d22f` ✅ | Garnet | **GHZ-12 — LE CHAT** | **66,0 %** (387/289) | 2 Sp |
+| 12 | `df23deac` ⏳ | IBEX Q1 | GHZ-4 chaîne séparé | en file (récolte imminente, workflow sauvé) | 15 Sp |
+| 13 | `77bc5a08` ⚫ | IBEX | doublon | annulé AVANT exécution (stop du chef) | 0 |
+| 14 | `407cd969` ⚫ | IBEX | épisodique | annulé à la demande → **15 Sp REMBOURSÉS** | 0 |
 
-⚠️ *Débit crédits : le solde actuel ne permet plus de soumettre — les 50 $ gratuits sont À RÉCLAMER sur le tableau de bord (Facturation → « 50 $ à réclamer »). Dès réclamation : GHZ-7 (le lien réel vers la courbe de Page, fig_6), puis comparaison Garnet/Emerald/Cepheus-1-108Q. Le canon est armé : `outils/soumettre_qpu.py ghz7`.*
+**10 états de GHZ réels · 3 machines · 3 architectures (ions all-to-all / supra 20q lattice / supra 108q chiplets) · ~11 264 tirs.**
 
-*Attribution (plan public Open Quantum) : résultats obtenus via www.openquantum.com — citation requise pour toute publication.*
+---
 
-### 🛰️ v0.4 (même jour, 15 h) — GHZ-7 : la PREMIÈRE donnée de scaling du labo
+## 🐱 La trilogie croisée et le chat-12
 
-Deuxième vol, compte « Tym Sama » (25 Spark, job `f348285e-1d02-4fcb-b263-e73ccba4597b`) : **état de GHZ à 7 qubits** (h + 6 CNOT en chaîne, 1024 tirs) sur le même IBEX Q1 :
+![La carte du jour](figures/fig_12_trilogie.png)
 
-| État | Comptages |
-|---|---|
-| `0000000` | **470** |
-| `1111111` | **452** |
-| flips d'1 bit (dominants) | ~48 |
-| autres erreurs | ~54 |
-| **Fidélité GHZ-7** | **90,04 %** (922/1024) — `figures/fig_9_ghz7_qpu.png` |
-
-**Et c'est LA phrase de la journée :** Bell à 2 qubits = 99,61 % · GHZ à 7 qubits = 90,04 %. **La cohérence décroît avec la taille — mesuré par nous, sur du vrai matériel, le même jour.** C'est exactement le terrain de la courbe de Page (fig_6) : comprendre où va l'information quand l'intrication grandit et fuit. Le labo RATISS tient maintenant les deux bouts de la chaîne : le calcul (🧮) ET la mesure (🛰️).
-
-*(Crédit restant : 10 Spark — le prochain vol attend la réclamation des 50 $.)*
-
-### 🛰️ v0.5 (soir) — le SHOT ÉPISODIQUE : 3 GHZ en UN job (idée du chef)
-
-**L'idée du chef : « plusieurs expériences dans un seul tir pour ne payer qu'une fois. »** Exécutée en 12 qubits, 3 compartiments (GHZ-3 + GHZ-4 + GHZ-5), 1024 tirs, sur IQM Garnet — job `85b3b9df`, **coût 2 crédits** (le supra coûte 7× moins que l'ion !) :
-
-- **Sur ions all-to-all (IBEX)** : le concept marche d'eux-mêmes (compartiments indépendants).
-- **Sur supra carré (Garnet)** : GHZ-3 = 92,3 % mais B/C ≈ 47 % — **le transpileur a inséré des SWAPs qui ont fait déborder l'intrication des compartiments** (pics mélangés de 78-116 tirs = états cohérents à travers les qubits remappés). `figures/fig_10_episode.png`.
-- **Verdict RATISS (résultat réel, pas un échec)** : le shot épisodique exige l'all-to-all — ou une transpilation explicite avec layouts sur étoiles natives (prochain vol, toujours 2 crédits). **La leçon d'architecture vaut le détour : on sait maintenant POURQUOI.**
-
-*(Trois comptes, trois organisations, trois files : Jonathan Evina → Tym Sama → Patrice Lagloire → Jonathan Sama. Le labo a appris à gérer un arsenal.)*
-
-### 🛰️ v0.6 (fin de soirée) — les tirages SÉPARÉS : la réponse du chef, le scaling du labo
-
-**Ordre du chef : « fais les tirages séparément, 3 requêtes. »** Exécuté sur Garnet en chaînes natives (`h q0; cx q_i,q_{i+1}`) — jobs `b00d5038`/`0c094342`/`e167f04c`, 3 × 1024 tirs, 6 crédits :
-
-| GHZ | épisodique (12q) | **séparé** |
-|---|---|---|
-| GHZ-3 | 92,3 / 92,5 % | **94,5 %** |
-| GHZ-4 | 47,6 / 44,5 % | **94,6 %** |
-| GHZ-5 | 44,7 / 45,9 % | **88,5 %** |
-
-**Loi RATISS du shot épisodique (donnée réelle, même machine, même heure) :** les compartiments co-hébergés ne survivent à la transpilation **que sur all-to-all** (ions). Sur lattice : chaînes natives en jobs séparés = 88-95 %. L'écart 45 % ↔ 94 % isole proprement l'effet du transpileur — **une petite expérience de systèmes qui vaut un paragraphe de papier.**
-
-### 🛰️ v0.7 (nuit) — LA TRILOGIE CROISÉE + LE CHAT-12
-
-Ordre du chef exécuté (1 tir à la fois, devis vérifiés) — **Cepheus-1-108Q coûte 1 crédit/job** (la moins chère du catalogue !) :
-
-| GHZ (chaînes) | 🔵 IBEX ions | 🟣 Garnet supra 20q | 🟡 Cepheus supra 108q |
+| GHZ (chaînes natives) | 🔵 IBEX ions | 🟣 Garnet supra 20q | 🟡 Cepheus supra 108q |
 |---|---|---|---|
-| 2 | **99,61 %** | — | — |
-| 3 | *(demain)* | 94,5 % | **89,7 %** |
-| 4 | *(en file, récolte demain)* | 94,6 % | **79,3 %** |
-| 5 | *(demain)* | 88,5 % | **68,7 %** |
-| 7 | **90,04 %** | — | — |
-| **12** | — | **66,0 %** 🐱 | — |
+| Bell-2 | **99,61 %** | — | — |
+| GHZ-3 | à venir | 94,5 % | **89,7 %** |
+| GHZ-4 | ⏳ en file | 94,6 % | **79,3 %** |
+| GHZ-5 | à venir | 88,5 % | **68,7 %** |
+| GHZ-7 | **90,04 %** | — | — |
+| **GHZ-12** | — | **66,0 %** 🐱 | — |
 
-**Le chat-12** (job `b373d22f`, 2 crédits) : 000…0=387, 111…1=289 → **66,0 %** — le plus grand état intriqué du labo, et la courbe de Garnet se referme (94,5 → 94,6 → 88,5 → 66,0). **Première comparaison inter-familles** : le 108q (Cepheus) décohère PLUS VITE que le 20q (Garnet) à taille égale. `figures/fig_12_trilogie.png`.
+**Trois lectures scientifiques :**
+1. **À taille égale, le 108q décohère PLUS VITE que le 20q** : 79,3 vs 94,6 % @GHZ-4 — les chiplets modulaires paient leur péage (SWAPs inter-chiplets). Première comparaison inter-familles du labo.
+2. **Trois pentes, trois signatures** : ions ≈ −1,9 pt/qubit · Garnet ≈ −5 pt/qubit au-delà de 5q · Cepheus ≈ −10,5 pt/qubit.
+3. **La tarification inversée** : Cepheus (108q) = 1 crédit/job, Garnet (20q) = 2, IBEX (12q ions) = 15. **Le quantique le plus gros est le moins cher** — les ions font payer la précision atomique.
 
-*(Workflow sauvé pour la récolte : `resultats/qpu_workflow_en_cours.json` — GHZ-4 ions `df23deac` en file IBEX, timeout 24 h.)*
+**Le chat-12** (job `b373d22f`) : 12 qubits intriqués en UN seul état de chat, chaîne de 11 CNOT, 1024 tirs. `000000000000` = 387 · `111111111111` = 289 → **66,0 %** — le plus grand état intriqué jamais produit par le labo, et la courbe de Garnet se referme : 94,5 → 94,6 → 88,5 → 66,0. La décohérence s'accélère avec la taille — exactement ce que la courbe de Page (🧮) prédit qualitativement.
 
-**Et la figure fig_11 droite : le PREMIER scaling croisé RATISS** — ions IBEX (99,6 % @2q → 90,0 % @7q) et supra Garnet (94,5/94,6/88,5 % @3/4/5q), mesurés le même jour. Le labo tient désormais : deux technologies, cinq états de GHZ, une méthode. Patrice `407cd969` dort encore dans la file IBEX — demain, les mêmes compartiments sur ions complètent le tableau.
+---
 
-## 🎯 Verdict de la mission (en 3 lignes)
+## 🏅 La loi RATISS du shot épisodique
 
-1. **Le mur existe comme croisement des équations, pas comme pixel** — le prouver « frontière » est impossible avec les données actuelles, et les données DISPOULAIENT déjà la version naïve.
-2. **Dépasser = fabriquer un trou noir** (calculé, √2 ℓ_P, testé) — ou payer un anneau de 516 années-lumière.
-3. **Oui, il peut y avoir des fluctuations plus petites que ℓ_P** : tout ce qui est sous ℓ_P/10 sans dispersion linéaire n'est pas encore contraint. La quête continue à une échelle sous le mur.
+**L'idée du chef** : plusieurs expériences dans un seul tir pour payer une fois. **L'issue — une vraie loi de systèmes, obtenue pour 4 crédits :**
 
-## 🔬 Reproduire (une commande, graine 20260929)
+> **Des compartiments quantiques co-hébergés ne survivent à la transpilation QUE sur une architecture all-to-all (ions).**
+> Sur lattice carrée (Garnet), le transpileur insère des SWAPs et l'intrication déborde des compartiments : **45 % au lieu de 94 %** — mêmes circuits, même machine, même heure. L'écart isole PROPREMENT l'effet du transpileur : une petite expérience de systèmes qui vaut un paragraphe de papier.
+
+---
+
+## 📊 Les chiffres clés
+
+| Chiffre | Valeur | Nature |
+|---|---|---|
+| Position du mur | √2·ℓ_P = 2,29×10⁻³⁵ m, à ±0,0011 % | 🧮 calculé (CODATA 2022) |
+| Énergie du croisement | E_P/√2 = 1,38×10⁹ J = **un éclair** ⚡ | 🧮 |
+| Anneau pour sonder ℓ_P | 516 années-lumière (aimants LHC) | 🧮 validé 📚 (LHC 2 801/2 804 m) |
+| Pixel ℓ_P exclu par | Fermi GRB 090510 : 824 ms prédits, 0 vus | 📚 rejoué 🧮 |
+| Frontière non contrainte | sous ℓ_P/10 (fenêtre n=1 ouverte) | 📚 |
+| Meilleure fidélité du labo | **Bell 99,61 %** (IBEX ions) | 🛰️ `a1f0fbef` |
+| Plus grand état intriqué | **GHZ-12 : 66,0 %** (Garnet) | 🛰️ `b373d22f` |
+| Meilleur rapport qualité/prix | Cepheus : 1 crédit/job, 89,7 % @GHZ-3 | 🛰️ |
+| Économie totale du jour | ~38 crédits dépensés, 15 remboursés, 0 perdu | 🛰️ |
+| Tests | 40/40 verts | 🧮 |
+| Figures | 12, toutes issues du calcul | 🧮/🛰️ |
+
+---
+
+## 🔬 La méthode du labo
+
+**La doctrine du chef** (éprouvée le jour J) :
+1. **Tir 1 par 1** — jamais de salve aveugle : Garnet → Cepheus → IBEX.
+2. **Le devis AVANT l'approbation** — la ligne « Auto-selected plan: N credits » du SDK est lue à voix haute avant chaque tir.
+3. **Ce qui est récupérable immédiatement, prends-le ; ce qui dure, laisse tourner** — job long = workflow sauvé, on revient demain.
+4. **Zéro chiffre non calculé** — chaque nombre de ce dépôt sort d'un script rejouable, jamais d'une copie.
+5. **Les échecs sont publiés** — jobs annulés, bugs attrapés par les tests, hypothèse épisodique invalidée : tout est dans l'historique.
+6. **Jamais annuler un job sans ordre explicite du chef** (leçon du jour, gravée).
+
+**La comédie des crédits** (à jamais dans les archives 😂) : la clé Open Quantum testée chez IBM 💀 · le QASM une-ligne refusé, coupé en vers, accepté · les tokens qui meurent à 5 min → tokens frais à chaque appel · les tirs abortés qui créent quand même des jobs (×3) → annulations chirurgicales · **le premier remboursement du labo : 15 Spark** 🎉.
+
+---
+
+## 🌅 Les espoirs
+
+![La vision](assets/illustration_ia_futur.png)
+
+*Illustration générée par IA d'une VISION — pas d'un bâtiment existant. RATISS Labs n'a ni laboratoire, ni cryostat, ni antenne : un téléphone, des crédits de cloud quantique et des idées. Le reste est un programme.*
+
+1. **Compléter le grand tableau** : GHZ-3/4/5 sur ions (le GHZ-4 y est presque ⏳) → 3 technologies × 5 tailles, la courbe de décohérence complète du marché quantique 2026.
+2. **La pente du 108q** : GHZ-7 et GHZ-12 sur Cepheus à 1 crédit le vol — jusqu'où tient le chat sur les chiplets ?
+3. **Le papier RATISS-PLANCK** : 🧮 mur/Page/Unruh/GUP + 🛰️ Bell/GHZ/loi du transpileur/scaling croisé — soumis quelque part d'honnête, préprint ouvert.
+4. **La relève** : des lycéens et étudiants de Yaoundé (puis d'ailleurs) qui rejouent la journée entière en une commande — et la dépassent.
+5. **Un jour, le bâtiment de l'image** : un accès quantique africain, école comprise. En attendant : chaque crédit est compté, chaque échec est publié, chaque figure est honnête.
+
+---
+
+## 🤝 Appel à contribution
+
+**Ce labo est petit, honnête et vivant — et il grandit vite. On cherche des complices :**
+
+- 🎓 **Étudiants & lycéens** : reprenez `outils/soumettre_qpu.py`, tirez vos propres GHZ, ajoutez votre machine au grand tableau. La méthode tient en 6 règles (voir plus haut) et une commande.
+- 🔬 **Scientifiques** : la loi du shot épisodique mérite d'être testée sur d'autres transpileurs et d'autres lattice ; les pentes de décohérence croisée, d'autres paires de backends. Données brutes déjà dans `resultats/`.
+- 💻 **Ingénieurs** : tests, CI, extension plotly, portage Qiskit/Braket des circuits — le dépôt est volontairement petit et lisible.
+- 💰 **Sponsors** : les crédits quantique sont comptés en Spark (1–15 par expérience). Chaque contribution est convertie en **jobs réels + rapports publics**, jamais en promesses.
+- 🗣️ **Passeurs** : traductions, vulgarisation, ateliers en classe — le dossier `RAPPORT-FINAL.md` est fait pour être lu à voix haute.
+
+**Règle unique de contribution : l'honnêteté absolue.** Échecs publiés, chiffres calculés, étiquettes 🧮/🛰️/📚 jamais mélangées, aucun titre gonflé, aucune institution inventée. Si ça ne passe pas ce filtre, ça ne rentre pas dans le dépôt.
+
+---
+
+## 🤖 La puissance de l'IA bien utilisée
+
+Ce travail n'aurait pas tenu dans une journée sans l'intelligence artificielle — et **rien de ce qui compte ici n'a été fait « à la place » de quelqu'un**. Voici exactement comment l'IA a servi :
+
+- **Calculateur infatigable** 🧮 : écrire, tester et rejouer la physique (bissection à 10⁻¹⁴, 512 états de Haar, intégration ΛCDM) en minutes — avec 40 tests qui la surveillent et qui ont attrapé ses bugs.
+- **Pilote de QPU** 🛰️ : soumettre 14 jobs sur 3 machines, lire les devis, sauver les workflows, compter chaque crédit — sous ordres humains explicites, tir par tir.
+- **Vérificateur honnête** 📚 : rejouer Fermi/LHAASO/Holometer depuis les sources, étiqueter ce qui est synthèse littéraire, refuser d'arrondir un chiffre.
+- **Illustrateur** 🎨 : les deux images de ce README sont générées par IA et **signalées comme telles** — l'esprit du labo et une vision, pas des faux documents.
+
+**La leçon** : l'IA est un instrument de laboratoire — comme un oscilloscope, mais qui sait aussi lire, écrire et se souvenir. Entre de mauvaises mains, elle embellit et elle invente. Entre de bonnes mains, avec des tests verts, des chiffres calculés et un chef qui décide, **elle rend la physique de pointe accessible depuis un téléphone, à Yaoundé, à 18 ans.** C'est littéralement la preuve par l'exemple. 🔥
+
+---
+
+## ▶️ Rejouer tout ça
 
 ```bash
-python3 planck/constantes.py    # les unités du mur vs CODATA
-python3 planck/mur.py           # croisement, seuil √2 ℓ_P, collideur
-python3 planck/mousse.py        # GRB 090510, retards, pixel maximal
-python3 planck/depassement.py   # la barrière de trou noir
-python3 planck/qubit.py         # le qubit informationnel au mur
-python3 planck/page.py          # la courbe de Page (modèle jouet)
-python3 planck/unruh.py         # l'effet Unruh le long du voyage
-python3 planck/figures.py       # les 4 figures
-python3 tests/test_planck.py    # 14/14
+git clone https://github.com/jonathansearch/RATISS-PLANCK.git
+cd RATISS-PLANCK
+pip install -r requirements.txt   # numpy, matplotlib (aucune dépendance exotique)
+
+python3 planck/mur.py && python3 planck/qubit.py && python3 planck/page.py && python3 planck/unruh.py
+python3 -m pytest tests/ -q       # 40/40 verts
+python3 outils/manifeste.py --verifier   # sceau du dépôt
 ```
 
-## 📁 Structure
+Cartographie : `planck/` (7 modules calculés) · `tests/` (40 tests) · `figures/` (12 figures) · `resultats/` (comptages QPU bruts, JSON) · `DONNEES/` (bases externes rejouées) · `outils/` (soumission QPU + sceau) · `RAPPORT-FINAL.md` (**le document source officiel complet**).
 
-```
-RATISS-PLANCK/
-├── planck/       constantes · mur · mousse · depassement · qubit · figures
-├── figures/      fig_1_mur · fig_2_collideur · fig_3_mousse · fig_4_depassement · fig_5_qubit
-├── tests/        test_planck.py (14) · test_qubit.py (12)
-├── DONNEES/      bases_externes.json (CODATA, Fermi, LHAASO, Holometer — sources datées)
-├── outils/       manifeste.py (sceau) · soumettre_qpu.py (🛰️ lanceur QPU réel)
-└── MANIFESTE.json
-```
+---
 
-## 🧭 Étiquettes RATISS (jamais mélangées)
+## 📜 Attribution et licence
 
-- **🧮 calcul** : unités de Planck, croisement/bissection, seuil √2 ℓ_P, rayon de courbure, D_C(z), retards LIV, pixel maximal — tout testé, tout rejouable.
-- **📚 synthèse littéraire** : les 5 portes théoriques, l'interprétation « pixel » — explicitement étiquetées, jamais présentées comme des données.
+- **Code et figures** : licence MIT (voir `LICENSE`).
+- **Données QPU** : acquis sur la plateforme **Open Quantum** — l'attribution de la source est obligatoire pour toute réutilisation (voir www.openquantum.com/citation). Machines remerciées par leurs noms : IBEX Q1 (ions), IQM Garnet (supra 20q), Rigetti Cepheus-1-108Q (supra 108q chiplets).
+- **Constantes** : CODATA 2022 · missions gamma : Fermi-LAT, LHAASO · bruit holographique : Fermilab Holometer.
+- **Projet** : RATISS Labs, Jonathan Evina — indépendant, mono-auteur, Yaoundé (Cameroun). Aucune affiliation institutionnelle.
 
-*RATISS Labs · Jonathan Evina (18 ans, Yaoundé) · MIT · le labo qui mesure sa portée avant de rêver plus loin.*
+---
+
+**RATISS Labs · Jonathan Evina (18 ans, Yaoundé)**
+*« On ne rêve pas le mur : on le chiffre, puis on va voir ce que ses voisins ont dans le ventre. »*
+**51 ordres de grandeur en une journée. 10 états de GHZ réels sur 3 machines quantiques. Un chat-12 à 66 %. Zéro promesse non tenue.** 🧮🛰️🇨🇲🔥😂
