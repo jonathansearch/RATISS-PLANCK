@@ -4,7 +4,7 @@
 **Édition définitive : la Base + la théorie + la trilogie croisée + le chat-12.**
 
 **Périmètre : RATISS-PLANCK, du mur de Planck aux vrais QPU. Étiquettes 🧮 calcul / 🛰️ terrain jamais mélangées.**
-**Statut des comptes QPU : VERROUILLÉS sur ordre du chef — Patrice 25 Spark INTACTS (gardés), Sama 15, Tym 10. Plus aucun tir.**
+**Statut des comptes QPU : VERROUILLÉS sur ordre du chef — Patrice 20, Evina 10, Tym 10, Sama 0 (investi). Plus aucun tir.**
 
 ---
 
@@ -181,14 +181,14 @@ Deux technologies, cinq états de GHZ, une méthode, une journée. **La case man
 
 ---
 
-## 🧾 LES LIVRABLES (tout est poussé, sceau 38/38 vérifié)
+## 🧾 LES LIVRABLES (tout est poussé, sceau 44/44 vérifié)
 
-- **Dépôt** : `github.com/jonathansearch/RATISS-PLANCK` — commits `338966b` → `aa47770` → `71ed802` → `5f32800`
+- **Dépôt** : `github.com/jonathansearch/RATISS-PLANCK` — commits `338966b` → `aa47770` → `71ed802` → `5f32800` → `0f5d95b` (ce rapport)
 - **Code** : `constantes.py` · `mur.py` · `mousse.py` · `depassement.py` · `qubit.py` · `page.py` · `unruh.py` · `figures*.py` · `soumettre_qpu.py`
 - **Tests** : **40/40 verts** (14 mur/mousse + 12 qubit + 14 Page/Unruh)
 - **Figures** : **12** (mur, collideur, mousse, dépassement, qubit, Page, Unruh, Bell, GHZ-7, épisode, séparés, **trilogie**)
 - **Données** : `DONNEES/bases_externes.json` + comptages bruts de tous les jobs (Garnet, Cepheus) + `RESULTATS-DU-JOUR.md` + `RESULTATS-DE-SOIREE.md`
-- **À NOTER** : ce rapport n'a PAS encore été poussé — push sur un mot du chef.
+- **Ce rapport est poussé** (commit `0f5d95b`).
 
 ## 🎯 LA SUITE (faisceau prêt, tir sur ordre uniquement)
 
