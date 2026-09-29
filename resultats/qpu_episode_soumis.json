@@ -1,0 +1,15 @@
+{
+  "type": "SHOT ÉPISODIQUE RATISS — soumis, en file (🛰️)",
+  "date": "2026-09-29, soumis vers 17h20 UTC",
+  "concept": " demandé par le chef : plusieurs expériences dans UN SEUL job pour payer une seule fois",
+  "job_id": "407cd969-f5d8-4a59-8698-9f1f93bc0b62",
+  "organisation": "Patrice Lagloire (compte 3, 25 Spark -> 15 dépensés)",
+  "backend": "AQT IBEX Q1 (12 qubits ions piégés)",
+  "circuit": "12 qubits, 3 compartiments simultanés : GHZ-3 (q0-q2) + GHZ-4 (q3-q6) + GHZ-5 (q7-q11), barriers entre compartiments, 1024 tirs",
+  "analyse_prevue": {
+    "methode": "chaque bitstring de 12 est découpé en 3 tranches ; un compartiment est 'idéal' si sa tranche vaut 000 ou 111 ; fidélité par compartiment + jointe (les 3 uniformes en même temps)",
+    "courbe_attendue": "scaling Bell(2)=99,61% et GHZ-7(7)=90,04% du matin + GHZ-3, GHZ-4, GHZ-5 de ce vol = 5 points de pente sur le même ion en 2 jobs seulement"
+  },
+  "statut": "Pending (file publique IBEX congestionnée le soir ; timeout plateforme 24 h — le job ne meurt pas)",
+  "credits_restants_patrice": 10
+}
