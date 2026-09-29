@@ -1,0 +1,50 @@
+{
+  "mission": "RATISS-PLANCK — vérifier le mur de Planck (29/09/2026)",
+  "note": "Toutes les valeurs de ce fichier viennent de sources publiques vérifiées le jour de la capture. Les dérivées (retards, pixel maximal, croisement) sont recalculées dans planck/ et testées.",
+
+  "codata_2022": {
+    "source": "NIST/CODATA 2022 — arXiv:2409.03787 — https://physics.nist.gov/cuu/Constants/",
+    "c": {"valeur_m_s": 299792458, "statut": "exact (SI 2019)"},
+    "h": {"valeur_J_s": 6.62607015e-34, "statut": "exact (SI 2019)"},
+    "G": {"valeur_m3_kg_s2": 6.6743e-11, "incertitude_relative": 2.2e-5},
+    "l_planck_m": {"valeur": 1.616255e-35, "incertitude": 1.8e-40},
+    "t_planck_s": {"valeur": 5.391247e-44},
+    "m_planck_kg": {"valeur": 2.176434e-8},
+    "E_planck_GeV": {"valeur": 1.2209e19},
+    "commentaire": "la position du mur est incertaine à ±0,0011 % — dominée par G"
+  },
+
+  "limits_liv_dispersion_lineaire_n1": [
+    {"experiment": "Fermi LAT+GBM — GRB 090510", "annee": 2009, "ref": "Abdo et al., Nature 462, 331-334 (2009)",
+     "borne": "E_QG,1 > 1,2 E_Pl ; photon 31 GeV ; retard total borne ~85 ms (hypothèses conservatrices)",
+     "redshift_source": 0.903},
+    {"experiment": "Fermi-LAT — 4 GRBs", "annee": 2013, "ref": "Fermi-LAT collaboration, PRD 87, 122001 (2013)",
+     "borne": "E_QG,1 > 7,6 E_Pl ; E_QG,2 > 1,3e11 GeV (95 % CL, subluminal)"},
+    {"experiment": "LHAASO — GRB 221009A", "annee": 2024, "ref": "Cao et al., Phys. Rev. Lett. 133, 071501 (2024)",
+     "borne": "E_QG,1 > 10 E_Pl (linéaire) ; E_QG,2 > 6e-8 E_Pl (quadratique)",
+     "remarque": "record actuel ; ~64 000 photons 0,2-13 TeV ; z ≈ 2,1e-3"},
+    {"experiment": "LHAASO — GRB 221009A (KM2A+WCDA)", "annee": 2024, "ref": "Yi et al. (LHAASO), JCAP 04 (2024) 060, arXiv:2312.09079",
+     "borne": "E_QG,1 > 14,7e19 GeV (subluminal) ; E_QG,2 > 12,0e11 GeV"}
+  ],
+
+  "holographie_labo": {
+    "experiment": "Fermilab Holometer (Hogan, Chou et al.)",
+    "annee": "2015-2016",
+    "resultat": "AUCUN bruit holographique corrélé détecté — le premier modèle testable d'univers pixelisé (corrélations de position à l'échelle de Planck, bras de 39 m) est exclu à haute signification statistique",
+    "refs": "Chou et al., PRL (2016) ; Science News 2015 ; Symmetry Magazine déc. 2015",
+    "caveat_hossenfelder": "plusieurs théoriciens (dont Hossenfelder) ont argumenté que l'expérience ne testait pas les modèles holographiques valides — résultat nul attendu par beaucoup",
+    "ligo": "LIGO exclut déjà un bruit de métrique d'amplitude de Planck SANS le caractère transverse spécifique holographique (cf. Hogan 2009, eq. 38)"
+  },
+
+  "cosmologie_utilisee": {
+    "source": "Planck 2018 results VI, A&A 641, A6 (2020)",
+    "H0_km_s_Mpc": 67.4, "Omega_m": 0.315, "Omega_L": 0.685,
+    "usage": "distance comobile de GRB 090510 intégrée numériquement : 3 153 Mpc"
+  },
+
+  "dfr_seuil": {
+    "ref": "Doplicher, Fredenhagen, Roberts, Commun. Math. Phys. 172, 187 (1995)",
+    "seuil_m": "√2 · l_P = 2,2857e-35",
+    "formule": "mesurer d exige hbar.c/d <= E et 2.G.E/c^4 <= d  =>  d >= sqrt(2.G.hbar/c^3)"
+  }
+}
