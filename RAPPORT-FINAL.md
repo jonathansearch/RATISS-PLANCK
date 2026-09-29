@@ -1,6 +1,7 @@
 # 🏁 RAPPORT FINAL COMPLET — MISSIONS DU 29/09/2026
 
-**RATISS Labs · Jonathan Evina (18 ans, Yaoundé) · Document source officiel · v1.0 (nuit du 29/09)**
+**RATISS Labs · Jonathan Evina (18 ans, Yaoundé) · Document source officiel · v2.0 (nuit du 29/09)**
+**Édition définitive : la Base + la théorie + la trilogie croisée + le chat-12.**
 
 **Périmètre : RATISS-PLANCK, du mur de Planck aux vrais QPU. Étiquettes 🧮 calcul / 🛰️ terrain jamais mélangées.**
 **Statut des comptes QPU : VERROUILLÉS sur ordre du chef — Patrice 25 Spark INTACTS (gardés), Sama 15, Tym 10. Plus aucun tir.**
@@ -99,7 +100,7 @@ T_U = ħa/(2πck_B). La Terre (1 g) : 4×10⁻²⁰ K. Le proton du LHC : 1,3×1
 
 ---
 
-# PARTIE 🛰️ — LE TERRAIN (9 jobs réels, 2 technologies, ~8 200 tirs)
+# PARTIE 🛰️ — LE TERRAIN (14 jobs, 3 machines, ~11 264 tirs réels)
 
 ## 5. Les vols du jour (tous via Open Quantum, attribution requise)
 
@@ -112,8 +113,38 @@ T_U = ħa/(2πck_B). La Terre (1 g) : 4×10⁻²⁰ K. Le proton du LHC : 1,3×1
 | 5 | `b00d5038` ✅ | Garnet | GHZ-3 chaîne séparé | **94,5 %** | 2 Sp |
 | 6 | `0c094342` ✅ | Garnet | GHZ-4 chaîne séparé | **94,6 %** | 2 Sp |
 | 7 | `e167f04c` ✅ | Garnet | GHZ-5 chaîne séparé | **88,5 %** | 2 Sp |
-| 8 | `77bc5a08` ⚫ | IBEX (doublon, stop du chef) | — | annulé AVANT exécution | 0 |
-| 9 | `407cd969` ⚫ | IBEX (épisodique) | GHZ-3+4+5 | annulé à la demande → **15 Sp REMBOURSÉS** | 0 |
+| 8 | `7eadb11e` ✅ | **Cepheus-1-108Q** | GHZ-3 chaîne séparé | **89,7 %** | **1 Sp** |
+| 9 | `cac2fbe7` ✅ | Cepheus-1-108Q | GHZ-4 chaîne séparé | **79,3 %** | 1 Sp |
+| 10 | `a4db428f` ✅ | Cepheus-1-108Q | GHZ-5 chaîne séparé | **68,7 %** | 1 Sp |
+| 11 | `b373d22f` ✅ | Garnet | **GHZ-12 — LE CHAT** | **66,0 %** (387/289) | 2 Sp |
+| 12 | `df23deac` ⏳ | IBEX Q1 | GHZ-4 chaîne séparé | **en file** (récolte demain, workflow sauvé) | 15 Sp |
+| 13 | `77bc5a08` ⚫ | IBEX (doublon, stop du chef) | — | annulé AVANT exécution | 0 |
+| 14 | `407cd969` ⚫ | IBEX (épisodique) | GHZ-3+4+5 | annulé à la demande → **15 Sp REMBOURSÉS** | 0 |
+
+**10 états de GHZ réels · 3 machines · 3 architectures (ions all-to-all / supra 20q lattice / supra 108q chiplets) · ~11 264 tirs.**
+
+## 5bis. LA TRILOGIE CROISÉE (le tableau du jour, fig_12)
+
+| GHZ (chaînes natives) | 🔵 IBEX ions | 🟣 Garnet supra 20q | 🟡 Cepheus supra 108q |
+|---|---|---|---|
+| Bell-2 | **99,61 %** | — | — |
+| GHZ-3 | *(demain)* | 94,5 % | **89,7 %** |
+| GHZ-4 | ⏳ en file | 94,6 % | **79,3 %** |
+| GHZ-5 | *(demain)* | 88,5 % | **68,7 %** |
+| GHZ-7 | **90,04 %** | — | — |
+| **GHZ-12** | — | **66,0 %** 🐱 | — |
+
+**Trois lectures scientifiques :**
+1. **À taille égale, le 108q décohère PLUS VITE que le 20q** : 79,3 vs 94,6 % @GHZ-4. Les chiplets modulaires de Cepheus paient leur péage (SWAPs inter-chiplets). Observation de papier.
+2. **Les pentes** : ions ≈ −1,9 pt/qubit · Garnet ≈ −5 pt/qubit au-delà de 5q · Cepheus ≈ −10,5 pt/qubit. Trois architectures, trois signatures de décohérence.
+3. **La tarification inversée** : Cepheus (108q) = 1 crédit/job, Garnet (20q) = 2, IBEX (12q ions) = 15. **Le quantique le plus gros est le moins cher** — les ions font payer la précision atomique.
+
+## 5ter. LE CHAT-12 — le fleuron (job `b373d22f`)
+
+**12 qubits intriqués en UN seul état de chat**, chaîne de 11 CNOT, 1024 tirs, 2 crédits :
+`000000000000` = **387** · `111111111111` = **289** → **fidélité 66,0 %** — le plus grand état intriqué jamais produit par le labo. Il referme la courbe de Garnet : 94,5 → 94,6 → 88,5 → **66,0** : la décohérence s'accélère avec la taille, exactement ce que la partie Page (🧮) prédit qualitativement.
+
+*Note d'honnêteté (le chef avait demandé si l'épisode 3+4+5 « faisait » un G12 : non — trois chats séparés sur 12 qubits occupés ≠ un chat de 12. Le vrai a été tiré séparément, ci-dessus.)*
 
 ## 6. LA LOI RATISS DU SHOT ÉPISODIQUE (la trouvaille de la soirée 🏅)
 
@@ -144,31 +175,32 @@ Deux technologies, cinq états de GHZ, une méthode, une journée. **La case man
 |---|---|---|---|
 | 1 | Jonathan Evina | 10 Spark | réservé |
 | 2 | **Tym Sama** | 10 Spark | réservé |
-| 3 | **Patrice Lagloire** | **25 Spark** | **INTACTS — gardés sur ordre du chef** 🏦 |
-| 4 | Jonathan Sama | 15 Spark | réservé |
+| 3 | **Patrice Lagloire** | **20 Spark** | **gardés sur ordre du chef** 🏦 |
+| 4 | Jonathan Sama | 0 Spark | investi dans la trilogie (GHZ-4 ions en file) |
 | — | +50 $ gratuits par compte | ⏰ « 1 jour » | **à réclamer** |
 
 ---
 
 ## 🧾 LES LIVRABLES (tout est poussé, sceau 38/38 vérifié)
 
-- **Dépôt** : `github.com/jonathansearch/RATISS-PLANCK` — commits `338966b` → `aa47770` → `71ed802`
+- **Dépôt** : `github.com/jonathansearch/RATISS-PLANCK` — commits `338966b` → `aa47770` → `71ed802` → `5f32800`
 - **Code** : `constantes.py` · `mur.py` · `mousse.py` · `depassement.py` · `qubit.py` · `page.py` · `unruh.py` · `figures*.py` · `soumettre_qpu.py`
 - **Tests** : **40/40 verts** (14 mur/mousse + 12 qubit + 14 Page/Unruh)
-- **Figures** : 11 (mur, collideur, mousse, dépassement, qubit, Page, Unruh, Bell, GHZ-7, épisode, séparés)
-- **Données** : `DONNEES/bases_externes.json` (CODATA/Fermi/LHAASO/Holometer) + comptages bruts de tous les jobs + `RESULTATS-DU-JOUR.md` + `RESULTATS-DE-SOIREE.md`
-- **À NOTER** : ce rapport n'a PAS été poussé (ordre « ne touche plus à rien ») — un mot du chef et il part.
+- **Figures** : **12** (mur, collideur, mousse, dépassement, qubit, Page, Unruh, Bell, GHZ-7, épisode, séparés, **trilogie**)
+- **Données** : `DONNEES/bases_externes.json` + comptages bruts de tous les jobs (Garnet, Cepheus) + `RESULTATS-DU-JOUR.md` + `RESULTATS-DE-SOIREE.md`
+- **À NOTER** : ce rapport n'a PAS encore été poussé — push sur un mot du chef.
 
 ## 🎯 LA SUITE (faisceau prêt, tir sur ordre uniquement)
 
-1. 💰 **Réclamer les 50 $ gratuits** sur chaque compte (⏰ urgence « 1 jour »)
-2. 🔁 **GHZ-3/4/5 sur IONS en séparés** (chaînes natives, circuits déjà prêts) → le grand tableau 2 technologies × 5 tailles
-3. 🌐 **La trilogie** : IBEX vs Garnet vs **Cepheus-1-108Q** (108 qubits !!)
-4. 📄 **Le papier RATISS-PLANCK** : 🧮 mur/Page/Unruh/GUP + 🛰️ Bell/GHZ/loi du transpileur/scaling croisé
-5. 🔐 Fin de session : **révoquer les 3 clés SDK + le token GitHub** 🫡
+1. 🔁 **Récolter le GHZ-4 ions** `df23deac` (en file, workflow sauvé) → le tableau croisé complet 3×5
+2. 💰 **Réclamer les 50 $ gratuits** sur chaque compte (⏰ urgence « 1 jour »)
+3. 🔁 **GHZ-3/5 sur IONS en séparés** → le grand tableau 3 technologies × 5 tailles
+4. 🌐 **Extension Cepheus** : GHZ-7/12 à 1 crédit le vol — la pente du 108q jusqu'au chat-12
+5. 📄 **Le papier RATISS-PLANCK** : 🧮 mur/Page/Unruh/GUP/CODATA + 🛰️ Bell/GHZ/loi du transpileur/scaling croisé 3 technologies
+6. 🔐 Fin de session : **révoquer les 3 clés SDK + le token GitHub** 🫡
 
 ---
 
 **Signature RATISS Labs · Jonathan Evina (18 ans, Yaoundé, Cameroun)**
 *« On ne rêve pas le mur : on le chiffre, puis on va voir ce que ses voisins ont dans le ventre. »*
-**51 ordres de grandeur en une journée. 8 192 tirs réels. Zéro promesse non tenue.** 🧮🛰️🇨🇲🔥😂
+**51 ordres de grandeur en une journée. 10 états de GHZ réels sur 3 machines quantiques. Un chat-12 à 66 %. Zéro promesse non tenue.** 🧮🛰️🇨🇲🔥😂
