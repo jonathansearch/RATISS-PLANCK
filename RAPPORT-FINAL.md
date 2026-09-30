@@ -117,11 +117,11 @@ T_U = ħa/(2πck_B). La Terre (1 g) : 4×10⁻²⁰ K. Le proton du LHC : 1,3×1
 | 9 | `cac2fbe7` ✅ | Cepheus-1-108Q | GHZ-4 chaîne séparé | **79,3 %** | 1 Sp |
 | 10 | `a4db428f` ✅ | Cepheus-1-108Q | GHZ-5 chaîne séparé | **68,7 %** | 1 Sp |
 | 11 | `b373d22f` ✅ | Garnet | **GHZ-12 — LE CHAT** | **66,0 %** (387/289) | 2 Sp |
-| 12 | `df23deac` ⏳ | IBEX Q1 | GHZ-4 chaîne séparé | **en file** (récolte demain, workflow sauvé) | 15 Sp |
+| 12 | `df23deac` ✅ | IBEX Q1 | GHZ-4 chaîne séparé | **97,27 %** (497/499) — récolté le 30/09, 16 h de file | 15 Sp |
 | 13 | `77bc5a08` ⚫ | IBEX (doublon, stop du chef) | — | annulé AVANT exécution | 0 |
 | 14 | `407cd969` ⚫ | IBEX (épisodique) | GHZ-3+4+5 | annulé à la demande → **15 Sp REMBOURSÉS** | 0 |
 
-**10 états de GHZ réels · 3 machines · 3 architectures (ions all-to-all / supra 20q lattice / supra 108q chiplets) · ~11 264 tirs.**
+**11 états réels (10 GHZ + 1 Bell) · 3 machines · 3 architectures · ~12 288 tirs.**
 
 ## 5bis. LA TRILOGIE CROISÉE (le tableau du jour, fig_12)
 
@@ -129,14 +129,14 @@ T_U = ħa/(2πck_B). La Terre (1 g) : 4×10⁻²⁰ K. Le proton du LHC : 1,3×1
 |---|---|---|---|
 | Bell-2 | **99,61 %** | — | — |
 | GHZ-3 | *(demain)* | 94,5 % | **89,7 %** |
-| GHZ-4 | ⏳ en file | 94,6 % | **79,3 %** |
+| GHZ-4 | **97,27 %** ✅ | 94,6 % | **79,3 %** |
 | GHZ-5 | *(demain)* | 88,5 % | **68,7 %** |
 | GHZ-7 | **90,04 %** | — | — |
 | **GHZ-12** | — | **66,0 %** 🐱 | — |
 
 **Trois lectures scientifiques :**
 1. **À taille égale, le 108q décohère PLUS VITE que le 20q** : 79,3 vs 94,6 % @GHZ-4. Les chiplets modulaires de Cepheus paient leur péage (SWAPs inter-chiplets). Observation de papier.
-2. **Les pentes** : ions ≈ −1,9 pt/qubit · Garnet ≈ −5 pt/qubit au-delà de 5q · Cepheus ≈ −10,5 pt/qubit. Trois architectures, trois signatures de décohérence.
+2. **Les pentes CONFIRMÉES** : ions **−1,9 pt/qubit vérifié sur 3 points** (99,61 @2q → 97,27 @4q → 90,04 @7q) · Garnet ≈ −5 pt/qubit au-delà de 5q · Cepheus ≈ −10,5 pt/qubit. Le GHZ-4 ions 97,27 % est le meilleur du tableau.
 3. **La tarification inversée** : Cepheus (108q) = 1 crédit/job, Garnet (20q) = 2, IBEX (12q ions) = 15. **Le quantique le plus gros est le moins cher** — les ions font payer la précision atomique.
 
 ## 5ter. LE CHAT-12 — le fleuron (job `b373d22f`)
@@ -192,7 +192,7 @@ Deux technologies, cinq états de GHZ, une méthode, une journée. **La case man
 
 ## 🎯 LA SUITE (faisceau prêt, tir sur ordre uniquement)
 
-1. 🔁 **Récolter le GHZ-4 ions** `df23deac` (en file, workflow sauvé) → le tableau croisé complet 3×5
+1. ✅ ~~Récolter le GHZ-4 ions~~ **FAIT le 30/09 : 97,27 %** — la ligne ions du GHZ-4 est complétée (fig_13)
 2. 💰 **Réclamer les 50 $ gratuits** sur chaque compte (⏰ urgence « 1 jour »)
 3. 🔁 **GHZ-3/5 sur IONS en séparés** → le grand tableau 3 technologies × 5 tailles
 4. 🌐 **Extension Cepheus** : GHZ-7/12 à 1 crédit le vol — la pente du 108q jusqu'au chat-12
@@ -203,4 +203,4 @@ Deux technologies, cinq états de GHZ, une méthode, une journée. **La case man
 
 **Signature RATISS Labs · Jonathan Evina (18 ans, Yaoundé, Cameroun)**
 *« On ne rêve pas le mur : on le chiffre, puis on va voir ce que ses voisins ont dans le ventre. »*
-**51 ordres de grandeur en une journée. 10 états de GHZ réels sur 3 machines quantiques. Un chat-12 à 66 %. Zéro promesse non tenue.** 🧮🛰️🇨🇲🔥😂
+**51 ordres de grandeur en une journée. 11 états réels sur 3 machines quantiques. Un chat-12 à 66 %. Un GHZ-4 ions à 97,27 %. Zéro promesse non tenue.** 🧮🛰️🇨🇲🔥😂

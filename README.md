@@ -124,15 +124,15 @@ Et ce n'est même pas un problème d'énergie : concentrer E_P dans une particul
 | 9 | `cac2fbe7` ✅ | Cepheus-1-108Q | GHZ-4 chaîne séparé | **79,3 %** | 1 Sp |
 | 10 | `a4db428f` ✅ | Cepheus-1-108Q | GHZ-5 chaîne séparé | **68,7 %** | 1 Sp |
 | 11 | `b373d22f` ✅ | Garnet | **GHZ-12 — LE CHAT** | **66,0 %** (387/289) | 2 Sp |
-| 12 | `df23deac` ⏳ | IBEX Q1 | GHZ-4 chaîne séparé | en file (récolte imminente, workflow sauvé) | 15 Sp |
+| 12 | `df23deac` ✅ | IBEX Q1 | GHZ-4 chaîne séparé | **97,27 %** (497/499) — récolté le 30/09 après 16 h de file | 15 Sp |
 | 13 | `77bc5a08` ⚫ | IBEX | doublon | annulé AVANT exécution (stop du chef) | 0 |
 | 14 | `407cd969` ⚫ | IBEX | épisodique | annulé à la demande → **15 Sp REMBOURSÉS** | 0 |
 
-**10 états de GHZ réels · 3 machines · 3 architectures (ions all-to-all / supra 20q lattice / supra 108q chiplets) · ~11 264 tirs.**
+**11 états réels (10 GHZ + 1 Bell) · 3 machines · 3 architectures (ions all-to-all / supra 20q lattice / supra 108q chiplets) · ~12 288 tirs.**
 
 ---
 
-## 🐱 La trilogie croisée et le chat-12
+## 🐱 La trilogie croisée, COMPLÈTE — et le chat-12
 
 ![La carte du jour — les trois architectures comparées](figures/fig_12_trilogie.png)
 
@@ -140,14 +140,14 @@ Et ce n'est même pas un problème d'énergie : concentrer E_P dans une particul
 |---|---|---|---|
 | Bell-2 | **99,61 %** | — | — |
 | GHZ-3 | à venir | 94,5 % | **89,7 %** |
-| GHZ-4 | ⏳ en file | 94,6 % | **79,3 %** |
+| GHZ-4 | **97,27 %** ✅ | 94,6 % | **79,3 %** |
 | GHZ-5 | à venir | 88,5 % | **68,7 %** |
 | GHZ-7 | **90,04 %** | — | — |
 | **GHZ-12** | — | **66,0 %** 🐱 | — |
 
 **Trois lectures scientifiques :**
 1. **À taille égale, le 108q décohère PLUS VITE que le 20q** : 79,3 vs 94,6 % @GHZ-4 — les chiplets modulaires paient leur péage (SWAPs inter-chiplets). Première comparaison inter-familles du labo.
-2. **Trois pentes, trois signatures** : ions ≈ −1,9 pt/qubit · Garnet ≈ −5 pt/qubit au-delà de 5q · Cepheus ≈ −10,5 pt/qubit.
+2. **Trois pentes, trois signatures — CONFIRMÉES** : ions **−1,9 pt/qubit vérifié sur 3 points** (99,61 @2q → 97,27 @4q → 90,04 @7q) · Garnet ≈ −5 pt/qubit au-delà de 5q · Cepheus ≈ −10,5 pt/qubit. Le GHZ-4 ions (**97,27 %**, récolté le 30/09 après 16 h de file) est le meilleur GHZ-4 du tableau.
 3. **La tarification inversée** : Cepheus (108q) = 1 crédit/job, Garnet (20q) = 2, IBEX (12q ions) = 15. **Le quantique le plus gros est le moins cher** — les ions font payer la précision atomique.
 
 **Le chat-12** (job `b373d22f`) : 12 qubits intriqués en UN seul état de chat, chaîne de 11 CNOT, 1024 tirs. `000000000000` = 387 · `111111111111` = 289 → **66,0 %** — le plus grand état intriqué jamais produit par le labo, et la courbe de Garnet se referme : 94,5 → 94,6 → 88,5 → 66,0. La décohérence s'accélère avec la taille — exactement ce que la courbe de Page (🧮) prédit qualitativement.
@@ -227,6 +227,7 @@ Et ce n'est même pas un problème d'énergie : concentrer E_P dans une particul
 | Pixel ℓ_P exclu par | Fermi GRB 090510 : 824 ms prédits, 0 vus | 📚 rejoué 🧮 |
 | Frontière non contrainte | sous ℓ_P/10 (fenêtre n=1 ouverte) | 📚 |
 | Meilleure fidélité du labo | **Bell 99,61 %** (IBEX ions) | 🛰️ `a1f0fbef` |
+| Meilleur GHZ-4 du tableau | **97,27 %** (IBEX ions, récolté le 30/09) | 🛰️ `df23deac` |
 | Plus grand état intriqué | **GHZ-12 : 66,0 %** (Garnet) | 🛰️ `b373d22f` |
 | Meilleur rapport qualité/prix | Cepheus : 1 crédit/job, 89,7 % @GHZ-3 | 🛰️ |
 | Économie totale du jour | ~38 crédits dépensés, 15 remboursés, 0 perdu | 🛰️ |
