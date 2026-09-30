@@ -1,0 +1,26 @@
+{
+ "type": "GHZ-4 IONS — la ligne complétée (trilogie cross-backend)",
+ "job_id": "df23deac-8158-46e2-acef-62c2d47823a6",
+ "backend": "AQT IBEX Q1 (ions piégés, all-to-all)",
+ "soumis": "2026-09-29T18:47:02Z (19h47 Yaoundé)",
+ "recolte": "2026-09-30 ~11h30 Yaoundé (après ~16 h de file IBEX)",
+ "cout": "15 Spark",
+ "comptages": {
+  "1000": 2,
+  "1011": 3,
+  "1100": 3,
+  "1101": 5,
+  "1110": 2,
+  "1111": 499,
+  "0000": 497,
+  "0001": 6,
+  "0010": 1,
+  "0011": 3,
+  "0100": 1,
+  "0111": 2
+ },
+ "somme": 1024,
+ "fidelite_ghz4": 97.27,
+ "lecture": "97,27 % — le meilleur GHZ-4 du tableau cross-backend (Garnet 94,6 %, Cepheus 79,3 %). Pente ions confirmée: 99,61 (2q) -> 97,27 (4q) -> 90,04 (7q) = -1,9 pt/qubit.",
+ "plateforme": "Open Quantum — attribution obligatoire (www.openquantum.com/citation)"
+}

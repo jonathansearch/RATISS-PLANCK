@@ -3,8 +3,10 @@
  "GHZ-4 IONS": {
   "job_id": "df23deac-8158-46e2-acef-62c2d47823a6",
   "organisation": "Jonathan Sama (15 crédits)",
-  "statut_au_29-09_nuit": "Pending (file IBEX congestionnée, timeout plateforme 24 h)",
+  "statut_au_29-09_nuit": "Completed le 30/09 (récolté ~11h30 Yaoundé)",
   "recolte": "python3 -c SDK get_job + download_job_output, puis fidélité = (0000+1111)/1024",
-  "valeur": "le point commun GHZ-4 ions <-> Garnet 94,6 % <-> Cepheus 79,3 %"
+  "valeur": "le point commun GHZ-4 ions <-> Garnet 94,6 % <-> Cepheus 79,3 %",
+  "fidelite_recoltee": 97.27,
+  "archive": "resultats/qpu_ghz4_ibex_counts.json"
  }
 }
